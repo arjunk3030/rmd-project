@@ -16,7 +16,7 @@ def main():
         reference=json.loads((OUTPUT_DIR/'dimensions.json').read_text())
         if reference.get('input_digest')!=input_digest():
             print('Shared inputs changed: regenerating the historical reference required by the current backend.',flush=True)
-            from .synthesize import main as reference_fit
+            from .legacy_geared_synthesis import main as reference_fit
             reference_fit()
         from .designs import build
         result=build('direct',refit=True,allow_fit=True,video=False)

@@ -15,7 +15,7 @@ from rmd import targets, model
 from rmd.design_io import load_design
 from rmd.validation import screen
 from rmd.clearance import segment_distance
-from rmd.synthesize import _residuals_band, N_OPT
+from rmd.legacy_geared_synthesis import _residuals_band, N_OPT
 
 class SynthesisTests(unittest.TestCase):
     def test_compact_full_drive_preserves_motion_and_has_no_sampled_clashes(self):
@@ -86,10 +86,10 @@ class SynthesisTests(unittest.TestCase):
 
     def test_stale_results_rejected(self):
         with patch('rmd.design_io.input_digest',return_value='changed'):
-            with self.assertRaisesRegex(ValueError,'Inputs changed'):load_design()
+            with self.assertRaisesRegex(ValueError,'Shared inputs do not match'):load_design()
 
     def test_invalid_geometry_residual_has_consistent_size(self):
-        from rmd.synthesize import KEYS
+        from rmd.legacy_geared_synthesis import KEYS
         d,b1,b2,_=load_design();d['b1']=10000
         residual=_residuals_band([d[k] for k in KEYS],b1,b2)
         self.assertEqual(len(residual),4*N_OPT+2)
@@ -148,7 +148,7 @@ class SynthesisTests(unittest.TestCase):
         np.testing.assert_allclose(np.linalg.norm(sim['TIP']-sim['E'],axis=1),150,atol=1e-8)
         self.assertEqual(len(gears(0,settings())),2)
         with patch('rmd.designs.direct_digest',return_value=('changed',{})):
-            with self.assertRaisesRegex(ValueError,'changed'):get_direct(allow_fit=False)
+            with self.assertRaisesRegex(ValueError,'Saved direct fit does not match'):get_direct(allow_fit=False)
 
     def test_both_complete_designs_recompute_checks(self):
         from rmd.designs import build

@@ -269,11 +269,9 @@ Keep the mechanism open behind the face; a tight fabric wrap could snag it.
 6. Fit the light ribs and separate pitched/tapered covers. Keep14mm free around
    the elbow on each panel; a taut sheet across that gap would add an unmodeled
    spring/load. Check the complete cycle again with actual panel thickness.
-7. Connect one STEP/DIR driver, set current/microsteps to the actual hardware,
-   and use firmware/wing_drive.ino. Its DIR level is wiring-dependent: the elbow
-   must fold on the return stroke shown in the animation. Start slowly, then ramp
-   to the modeled15rpm. No homing, stall detection or closed-loop force control
-   is implemented.
+7. Select a compatible actuator and driver before implementing controls.
+   Confirm direction against the animation and test slowly before operating
+   at the modeled15rpm. No actuator-control firmware is supplied.
 
 ## Checked numerical results
 
@@ -301,14 +299,3 @@ Nothing here certifies a flight-capable or strength-qualified machine.
 '''
     (out/'build_notes.md').write_text(text)
 
-
-def write_index():
-    rows=[]
-    for kind in ('compact','direct'):
-        path=OUTPUT_DIR/kind/'validation.json'
-        if not path.exists():continue
-        r=json.loads(path.read_text());rows.append(f'<article><h2>{r["name"]}</h2><p>Nominal checks: {r["status"]} · {r["clearance"]["gear_count"]} gears · fold {r["kinematics"]["max_F_deg"]:.1f}°</p><a href="{kind}_3d.html">Open interactive3D</a> · <a href="{kind}/build_notes.md">Build notes</a><br><img src="{kind}/preview.png" width="500"></article>')
-    (OUTPUT_DIR/'index.html').write_text('<!doctype html><meta charset="utf-8"><title>Two compact bat-wing designs</title><style>body{font:16px system-ui;background:#11151c;color:#ddd;margin:32px}a{color:#8fc4ff}main{display:flex;gap:24px;flex-wrap:wrap}article{max-width:520px}img{max-width:100%}</style><h1>Two compact bat-wing designs</h1><p>One motor each. All targets are editable engineering estimates. Nominal checks do not replace hardware fit and loaded testing.</p><main>'+''.join(rows)+'</main>')
-    # Preserve the user-referenced path as a redirect, not a third design.
-    alias=OUTPUT_DIR/'experiments/coaxial';alias.mkdir(parents=True,exist_ok=True)
-    (alias/'interactive_3d.html').write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=../../direct_3d.html"><a href="../../direct_3d.html">The direct-shaft design moved here.</a>')

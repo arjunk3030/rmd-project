@@ -1,5 +1,11 @@
 """
-Synthesis pipeline for Approach C:
+LEGACY: synthesis of the older geared four-bar candidate.
+
+Not the current direct six-bar optimizer; that is direct_drive.py → fit().
+Still used by redesign_worker when changed shared inputs require rebuilding
+the saved reference. Retained as an active compatibility dependency.
+
+Historical synthesis stages:
 
   1. Freudenstein seed, linkage 1 (body frame). The rocker mounting
      offset kappa1 is unknown a priori, so the seed search grids over
@@ -13,7 +19,8 @@ Synthesis pipeline for Approach C:
      as an interval (fold tolerance), plus soft screen penalties.
   4. Screening report on a fine grid.
 
-Run:  python3 synthesize.py            (writes outputs/dimensions.json)
+Use the isolated `python3 run_all.py redesign NAME` workflow.
+This module writes the reference dimensions into that run’s output directory.
 """
 import json
 import os

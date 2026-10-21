@@ -21,8 +21,7 @@ belt and actuator reservation remain visible and are part of the model. This is
 a stationary display, not a self-contained flying robot. No actual servo model
 is selected; a standard limited-angle hobby servo cannot directly run this
 continuous 360-degree input. Select torque, spline, supply and driver before
-finishing the pedestal. The old STEP/DIR firmware is only for a compatible
-stepper driver, not automatically for a hobby servo.
+finishing the pedestal. Actuator-control firmware is not supplied.
 
 ## Targets and synthesis
 
