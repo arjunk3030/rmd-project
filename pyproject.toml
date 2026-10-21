@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rmd-wing"
+version = "0.3.0"
+description = "Frozen Stephenson bat-wing demos and isolated numerical redesigns"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[project.scripts]
+rmd-wing = "rmd.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rmd = ["templates/*.html"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}

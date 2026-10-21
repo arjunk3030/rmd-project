@@ -1,0 +1,90 @@
+{
+  "motor_count": 1,
+  "input_rpm": 15.0,
+  "cycle_seconds": 4.0,
+  "estimated_peak_constant_speed_torque_Nm": 0.06180595921965421,
+  "friction_allowance_Nm": 0.05,
+  "startup_ramp_seconds_assumed": 2,
+  "startup_torque_allowance_Nm": 0.0004376007380880079,
+  "assumed_path_efficiency": 0.95,
+  "service_factor": 3.0,
+  "required_running_torque_target_Nm": 0.35445334723497546,
+  "peak_mechanical_power_W": 0.09708457371626801,
+  "elbow_rod_force_peak_N": 0.7015812661305079,
+  "factored_elbow_rod_force_N": 2.1047437983915236,
+  "elbow_axle_overhang_mm": 3,
+  "estimated_elbow_shaft_bending_MPa": 2.3820826983539383,
+  "estimated_elbow_shaft_deflection_mm": 2.3820826983539383e-05,
+  "assumed_steel_yield_MPa": 150,
+  "assumed_steel_E_GPa": 200,
+  "rod_material": "3 mm plywood; editable trial stock, not strength-qualified",
+  "rod_E_GPa_assumed": 2.0,
+  "ideal_pinned_rod_buckling_N": 27.116734051450656,
+  "conditional_strength_checks": {
+    "elbow_shaft_bending": true,
+    "elbow_shaft_deflection": true,
+    "ideal_rod_buckling": true
+  },
+  "mass_assumptions": [
+    {
+      "part": "R/crank1",
+      "estimated_mass_g": 0.28235036696306226
+    },
+    {
+      "part": "R/coupler1",
+      "estimated_mass_g": 0.41896772056001835
+    },
+    {
+      "part": "R/rocker1",
+      "estimated_mass_g": 0.4845129656204361
+    },
+    {
+      "part": "R/rod2_direct",
+      "estimated_mass_g": 1.8837116544691694
+    },
+    {
+      "part": "R/elbow_horn",
+      "estimated_mass_g": 0.4267039318719152
+    },
+    {
+      "part": "R/inner_spar",
+      "estimated_mass_g": 28.0
+    },
+    {
+      "part": "R/outer_spar",
+      "estimated_mass_g": 20.0
+    },
+    {
+      "part": "L/crank1",
+      "estimated_mass_g": 0.28235036696306226
+    },
+    {
+      "part": "L/coupler1",
+      "estimated_mass_g": 0.41896772056001835
+    },
+    {
+      "part": "L/rocker1",
+      "estimated_mass_g": 0.4845129656204361
+    },
+    {
+      "part": "L/rod2_direct",
+      "estimated_mass_g": 1.8837116544691694
+    },
+    {
+      "part": "L/elbow_horn",
+      "estimated_mass_g": 0.4267039318719152
+    },
+    {
+      "part": "L/inner_spar",
+      "estimated_mass_g": 28.0
+    },
+    {
+      "part": "L/outer_spar",
+      "estimated_mass_g": 20.0
+    }
+  ],
+  "running_torque_verified": false,
+  "build_ready": false,
+  "method": "tau=V_prime + 0.5*omega^2*Ieff_prime. Both wings and moving links; distributed rigid members, gravity and inertia.",
+  "limits": "All masses, friction, link stiffness and steel properties are assumptions. Wood grain, ply quality, hole tear-out and fabric tension are unverified. Elbow cantilever estimate is not a full shaft/bearing/pin/gear-tooth strength analysis. No aerodynamics, impacts, compliance or resonance. Holding torque is not running torque; test the actual motor and hardware."
+}

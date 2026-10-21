@@ -1,0 +1,31 @@
+{
+  "purpose": "Presentation freeze: no synthesis, geometry or physical input changes permitted by demo commands.",
+  "parameters": [
+    11.816197190452613,
+    20.57371985692415,
+    24.77533813002786,
+    -1.1742272158332396,
+    0.20910086852814305,
+    12.341103362423812,
+    1.082778310318743,
+    21.069630838455993,
+    2.349847416417362,
+    114.46756177417743
+  ],
+  "sha256": {
+    "outputs/direct/dimensions.json": "7cf0344faa4df13eedbe07828a87990972c4d87b9eb210eee0d6943e3a94c6d3",
+    "outputs/dimensions.json": "e9e1d5cb26e417bfcc6ba96446d522785d40486544bb29ef5c5ef08767a26d37",
+    "config/direct_seed.json": "b2f7f531b644c431686304b6667e5322067f34dc0a24eb60b88ea92bccf7e6c8",
+    "config/direct_drive.json": "695d601b57b4d85a0513eaaec8a26c8ad4ccb835daaf833967e0950edeeb6932",
+    "config/layout.json": "17d1583b229a67eff6fa8f264ca338135fc698a9be61d6a7b530b723ef51ee1a",
+    "config/targets.json": "adcfbb2fb89f8471d765601fcaf616c013165179c567d9a4fa326d6deac78fe7",
+    "config/build.json": "d72760b3c3cf347718b28b55cdbba72ca0739285a850d6fc3b898fe7439444cb",
+    "config/solver.json": "35195e1b0ed050aa2c10b6f5ad30f9ba3bf48c75e581d5323595501610f9433d",
+    "config/requirements.json": "2d2aa26a151bb986975d4aca15bb956b19a334a1871b1bda0f07fae125c0b521",
+    "config/compact_drive.json": "6178d1100fbd21cec9e7819f3417fb8949c06b07b0ac38ed37526e2f620c99fe",
+    "config/single_face.json": "cb273c78c719c07792c9e6c8cc345e69ce6455b700913f1a8193ab1ad6f29f87",
+    "src/rmd/direct_drive.py": "284331e90e6518e08b52a7bbcd38e998adf6ac60a990f0edd6f8ea0498fb787e",
+    "src/rmd/direct_package.py": "a61528433a23b4bdfb84390b7bdfeb6a0defd3b418078b3842201c90c0eefb80",
+    "src/rmd/direct_targets.py": "6c057a8ee6f16482fd21a7808a42b8b88fd4a740b13db34abae1ce1bf5fb1bef"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Single-face Stephenson option",
+  "front_crank_plane_x_mm": -30,
+  "rear_crank_plane_x_mm": -30,
+  "front_rod_plane_x_mm": -37,
+  "rear_rod_plane_x_mm": -46,
+  "front_rocker_plane_x_mm": -16,
+  "wing_plane_x_mm": -16,
+  "left_layer_spread_mm": 0,
+  "panel_direction": 1,
+  "audit_samples": 1440,
+  "provenance": "Experimental same-face repackaging; retains synthesized motion, known pin/rod interference. Not a fabrication design."
+}

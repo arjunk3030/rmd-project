@@ -1,0 +1,7 @@
+shaft,length_mm,x0,y0,z0,x1,y1,z1,note
+R/motor_shaft,36.0,-18.0,17.0,-26.832815729997478,18.0,17.0,-26.832815729997478,Smooth 3 mm metal shaft; short span supported in plain bushings
+R/shoulder_shaft,42.0,-24.0,25.0,0.0,18.0,25.0,0.0,Smooth 3 mm metal shaft; short span supported in plain bushings
+R/elbow_shaft,14.5,8.0,107.12308517531925,57.05960814172545,22.5,107.12308517531925,57.05960814172545,Smooth 3 mm metal shaft; short span supported in plain bushings
+L/motor_shaft,42.0,-18.0,-17.0,-26.832815729997478,24.0,-17.0,-26.832815729997478,Smooth 3 mm metal shaft; short span supported in plain bushings
+L/shoulder_shaft,48.0,-24.0,-25.0,0.0,24.0,-25.0,0.0,Smooth 3 mm metal shaft; short span supported in plain bushings
+L/elbow_shaft,14.5,14.0,-107.12308517531925,57.05960814172545,28.5,-107.12308517531925,57.05960814172545,Smooth 3 mm metal shaft; short span supported in plain bushings

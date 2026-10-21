@@ -1,0 +1,34 @@
+# Python environments, caches and packaging
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+/build/
+/dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local editor / OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local secrets (none required by this project)
+.env
+.env.*
+!.env.example
+
+# Reproducible videos and tool caches
+outputs/.matplotlib/
+outputs/videos/
+**/.matplotlib/
+
+# Keep experiment inputs shareable; ignore potentially large run snapshots
+/experiments/*/runs/
+
+# Keep final HTML demos, canonical dimensions, config and validation tracked.
+# Do not ignore all of outputs/: the frozen demo requires saved JSON results.

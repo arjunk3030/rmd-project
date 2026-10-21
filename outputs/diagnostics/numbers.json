@@ -1,0 +1,32 @@
+{
+  "scope": "Same frozen design; 7200 poses at 0.05 degrees. No fitting.",
+  "links_mm": {
+    "a": 11.816197190452613,
+    "b": 20.57371985692415,
+    "c": 24.77533813002786,
+    "aD": 12.341103362423812,
+    "h": 21.069630838455993,
+    "L": 114.46756177417743
+  },
+  "mounting_deg": {
+    "kappa": -67.27826365664183,
+    "phase_A": 11.980597259182499,
+    "phase_B": 62.038627329570524,
+    "eta": 134.63633946043532
+  },
+  "transmission_minima": {
+    "mu1": {
+      "degrees": 40.500843925259396,
+      "input_degrees": 61.4
+    },
+    "mu2": {
+      "degrees": 40.50089999999282,
+      "input_degrees": 242.50000000000003
+    }
+  },
+  "input_travel_deg": 360,
+  "modeled_rpm": 15.0,
+  "playback_cycle_seconds": 4.0,
+  "physical_stock_mm": 3.0,
+  "intended_stock_mm": 6.35
+}

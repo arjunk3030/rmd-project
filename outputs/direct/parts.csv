@@ -1,0 +1,36 @@
+part,quantity,size_mm_or_specification,notes
+crank1,2,11.8162,3 mm plywood trial stock; smooth metal 3 mm pivot surfaces; pin-center distances
+coupler1,2,20.5737,3 mm plywood trial stock; smooth metal 3 mm pivot surfaces; pin-center distances
+rocker1,2,24.7753,3 mm plywood trial stock; smooth metal 3 mm pivot surfaces; pin-center distances
+crank2_direct,2,12.3411,3 mm plywood trial stock; smooth metal 3 mm pivot surfaces; pin-center distances
+rod2_direct,2,114.4676,3 mm plywood trial stock; smooth metal 3 mm pivot surfaces; pin-center distances
+elbow_horn,2,21.0696,3 mm plywood trial stock; smooth metal 3 mm pivot surfaces; pin-center distances
+wing covering,4,0.3 mm assumed,"Cut separate panels; hinge relief14 mm, never bridge the elbow with a taut sheet"
+support rib,10,2 mm nominal diameter,Cut lengths in rib_lengths.csv
+M3 pivot hardware,8,Smooth 3 mm bearing surface,Use grip lengths in pivot_hardware.csv; threads are not bearing surfaces
+base,1,100 x 90 x 8,Nominal supported layout; fasten frame legs and motor mount
+plain bushing,10,3 mm ID x 6 mm OD x 3 mm long,"Trial sleeve size, measure running fit; no 16 mm ball bearings"
+3 mm steel shafts,see shaft_schedule.csv,3 mm OD,"Small metal hubs/retainers, grip unverified"
+continuous actuator,1,Unselected single-output continuous servo or geared motor in pedestal,"Pedestal reservation only; actual torque, output and driver selection pending"
+timing belt,1,"2 mm pitch, 240 mm pitch length, 6 mm width",100 mm centers with two 20T pulleys; allow adjustable tension
+timing pulley,2,"20T, 2 mm pitch, 6 mm face","3 mm shaft hub in body, adapt pedestal pulley to selected actuator"
+R/distribution,1,34T module1; face3,Clamped gear; zero-pose tooth phase is in layout.json
+L/distribution,1,34T module1; face3,Clamped gear; zero-pose tooth phase is in layout.json
+common_bearing_plate_-9.5,1,3 x 62 x 44,Bearing/pilot center template supplied; finish retaining seats and frame mounting holes against purchased hardware
+common_bearing_plate_9.5,1,3 x 62 x 44,Bearing/pilot center template supplied; finish retaining seats and frame mounting holes against purchased hardware
+stand_leg_-9.5,1,3 x 6 x 116,Structural envelope; finish mounting/fastening details in CAD
+stand_leg_9.5,1,3 x 6 x 116,Structural envelope; finish mounting/fastening details in CAD
+drive/actuator_reservation,1,40 x 20 x 40,Structural envelope; finish mounting/fastening details in CAD
+R/clamp_crank1,1,length 2.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+R/clamp_crank2,1,length 2.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+R/clamp_rocker1,1,length 2.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+R/root_clamp,1,length 3.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+R/outer_wing_clamp,1,length 4.000; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+L/clamp_crank1,1,length 2.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+L/clamp_crank2,1,length 2.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+L/clamp_rocker1,1,length 2.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+L/root_clamp,1,length 3.500; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+L/outer_wing_clamp,1,length 4.000; envelope radius 4,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+frame_spacer_-17_5,1,length 16.000; envelope radius 1.5,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+frame_spacer_0_5,1,length 16.000; envelope radius 1.5,Envelope allocation; select or finish clamp/spacer and verify grip and retention
+bat body silhouette,1,3 mm plywood; bat_body_1to1.svg,Removable front cover; brackets/fasteners require final layout. Do not enclose moving rods with taut fabric.

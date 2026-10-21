@@ -1,0 +1,7 @@
+# Python 3.10+. Install: python3 -m pip install -r requirements.txt
+# FFmpeg is optional for MP4 export; Node.js is optional for viewer smoke tests.
+# Neither is a Python dependency. Viewing existing HTML requires only a browser.
+numpy>=1.24,<3
+scipy>=1.10,<2
+matplotlib>=3.7,<4
+Pillow>=9,<13

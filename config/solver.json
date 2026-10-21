@@ -1,0 +1,39 @@
+{
+  "provenance": "Numerical search settings and guessed packaging bounds; not biological data.",
+  "parameter_keys": [
+    "a1",
+    "b1",
+    "c1",
+    "kappa1",
+    "a2",
+    "b2",
+    "c2",
+    "eta",
+    "delta"
+  ],
+  "lower_bounds": [
+    8,
+    15,
+    15,
+    -3.141592653589793,
+    12.0,
+    65,
+    18,
+    -3.141592653589793,
+    -3.141592653589793
+  ],
+  "upper_bounds": [
+    25,
+    80,
+    60,
+    3.141592653589793,
+    22,
+    135,
+    38,
+    3.141592653589793,
+    3.141592653589793
+  ],
+  "optimization_samples": 144,
+  "max_nfev": 1200,
+  "safety_margin_deg": 0.3
+}

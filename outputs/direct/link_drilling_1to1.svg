@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="179.46756177417743mm" height="186mm" viewBox="0 0 179.46756177417743 186"><rect width="100%" height="100%" fill="white"/>
+<path d="M18,12H29.816197190452613A4,4 0 0 1 29.816197190452613,20H18A4,4 0 0 1 18,12Z" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="16" r="4" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="16" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="29.816197190452613" cy="16" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<text x="36.81619719045261" y="17" font-size="3">crank1: 11.816</text>
+<path d="M18,40H38.57371985692416A4,4 0 0 1 38.57371985692416,48H18A4,4 0 0 1 18,40Z" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="44" r="4" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="44" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="38.57371985692416" cy="44" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<text x="45.57371985692416" y="45" font-size="3">coupler1: 20.574</text>
+<path d="M18,68H42.77533813002786A4,4 0 0 1 42.77533813002786,76H18A4,4 0 0 1 18,68Z" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="72" r="4" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="72" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="42.77533813002786" cy="72" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<text x="49.77533813002786" y="73" font-size="3">rocker1: 24.775</text>
+<path d="M18,96H30.341103362423816A4,4 0 0 1 30.341103362423816,104H18A4,4 0 0 1 18,96Z" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="100" r="4" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="100" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="30.341103362423816" cy="100" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<text x="37.341103362423816" y="101" font-size="3">crank2_direct: 12.341</text>
+<path d="M18,124H132.46756177417743A4,4 0 0 1 132.46756177417743,132H18A4,4 0 0 1 18,124Z" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="128" r="4" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="128" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="132.46756177417743" cy="128" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<text x="139.46756177417743" y="129" font-size="3">rod2_direct: 114.468</text>
+<path d="M18,152H39.06963083845601A4,4 0 0 1 39.06963083845601,160H18A4,4 0 0 1 18,152Z" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="156" r="4" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="18" cy="156" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<circle cx="39.06963083845601" cy="156" r="1.6" fill="none" stroke="black" stroke-width=".15"/>
+<text x="46.06963083845601" y="157" font-size="3">elbow_horn: 21.070</text>
+</svg>

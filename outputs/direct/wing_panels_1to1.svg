@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="230mm" viewBox="0 0 210 230"><rect width="100%" height="100%" fill="white"/>
+<polygon points="12.0000,12.0000 82.0000,12.0000 82.0000,82.0000 12.0000,44.0000" fill="none" stroke="black" stroke-width=".15"/>
+<text x="12" y="103" font-size="3">R/inner_panel: mirror for left; print100%; separate hinge panels.</text>
+<polygon points="16.0746,117.0000 146.4586,117.0000 145.5696,128.9670 12.0000,171.8489" fill="none" stroke="black" stroke-width=".15"/>
+<text x="12" y="208" font-size="3">R/outer_panel: mirror for left; print100%; separate hinge panels.</text>
+</svg>

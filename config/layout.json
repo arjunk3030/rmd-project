@@ -1,0 +1,31 @@
+{
+  "inner_length_mm": 110.0,
+  "outer_length_mm": 140.0,
+  "motor_offset_mm": [
+    -30.0,
+    -40.0
+  ],
+  "crank1_phase_deg": 0.0,
+  "layer_x_mm": {
+    "wing": 0.0,
+    "linkage1": 8.0,
+    "linkage1_rod": 2.0,
+    "linkage2": -12.0,
+    "linkage2_rod": -20.0
+  },
+  "chord_inner_mm": 70.0,
+  "chord_outer_mm": 55.0,
+  "provenance": "Shared canonical kinematic/panel inputs only. The motor offset fixes the 50 mm reference ground length, not either assembled body width. Actual package pivots are derived from compact_drive.json or direct_drive.json. Panel and motion values are editable engineering assumptions.",
+  "membrane_front_x_mm": 5.0,
+  "membrane_direction": 1.0,
+  "membrane_root_relief_mm": 40.0,
+  "membrane_hinge_relief_mm": 14,
+  "drive_ratio": 1.0,
+  "drive_sign": -1,
+  "panel_style": "tapered",
+  "panel_pitch_deg": 15.0,
+  "inner_panel_root_chord_mm": 32.0,
+  "outer_panel_tip_chord_mm": 12.0,
+  "outer_panel_sweep_mm": 10.0,
+  "membrane_thickness_mm": 0.3
+}

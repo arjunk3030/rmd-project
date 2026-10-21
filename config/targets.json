@@ -1,0 +1,62 @@
+{
+  "provenance": "Stylized guessed bat-like motion: \u00b125 degree shoulder, 50 degree return fold. Not measured animal data.",
+  "samples": [
+    [
+      0,
+      25,
+      14
+    ],
+    [
+      0.125,
+      17.7,
+      3.5
+    ],
+    [
+      0.25,
+      0,
+      0
+    ],
+    [
+      0.375,
+      -17.7,
+      3.5
+    ],
+    [
+      0.5,
+      -25,
+      14
+    ],
+    [
+      0.625,
+      -17.7,
+      38.5
+    ],
+    [
+      0.75,
+      0,
+      50
+    ],
+    [
+      0.875,
+      17.7,
+      38.5
+    ],
+    [
+      1,
+      25,
+      14
+    ]
+  ],
+  "freudenstein_sample_indices": {
+    "linkage1": [
+      0,
+      2,
+      4
+    ],
+    "linkage2": [
+      0,
+      4,
+      6
+    ]
+  }
+}

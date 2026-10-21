@@ -1,0 +1,76 @@
+{
+  "provenance": "Shared stock/hardware envelope and estimated mass assumptions for the two compact options. Design-specific motor positions, shafts and frames live in each package config.",
+  "animation_cycle_seconds": 4.0,
+  "motor_count": 1,
+  "gear": {
+    "module_mm": 1.0,
+    "teeth": 50,
+    "pressure_angle_deg": 20.0,
+    "face_width_mm": 6.0,
+    "tooth_thinning_mm": 0.1,
+    "hub_radius_mm": 9.0,
+    "hub_width_mm": 4.0
+  },
+  "shaft_diameter_mm": 5.0,
+  "bearing": {
+    "name": "625-2Z",
+    "bore_mm": 5.0,
+    "od_mm": 16.0,
+    "width_mm": 5.0
+  },
+  "bearing_fit_diameter_mm": 16.15,
+  "link_thickness_mm": 3.0,
+  "link_width_mm": 8.0,
+  "pivot_hole_mm": 3.2,
+  "mass_estimates_g": {
+    "inner_wing_with_hub": 28.0,
+    "outer_wing_with_hub": 20.0,
+    "link_density_g_per_mm3": 0.00127,
+    "gear_each": 16.0
+  },
+  "friction_allowance_Nm": 0.025,
+  "torque_service_factor": 3.0,
+  "root_hub": {
+    "radius_mm": 12.0,
+    "x_min_mm": -3.0,
+    "x_max_mm": 10.0,
+    "bearing_centers_x_mm": [
+      0.0,
+      6.0
+    ]
+  },
+  "elbow_hub": {
+    "radius_mm": 12.0,
+    "x_min_mm": -3.0,
+    "x_max_mm": 10.0
+  },
+  "elbow_shaft_x_mm": [
+    -14.0,
+    10.0
+  ],
+  "outer_spar_x_mm": -6.0,
+  "fastener_head_radius_mm": 3.0,
+  "crank_clamp_hubs": {
+    "crank1_x_mm": [
+      6.5,
+      16.5
+    ],
+    "crank2_x_mm": [
+      -15.0,
+      -5.0
+    ],
+    "outer_horn_x_mm": [
+      -15.0,
+      -4.0
+    ],
+    "radius_mm": 10.0,
+    "crank2_radius_mm": 6.0
+  },
+  "assumed_mesh_efficiency": 0.95,
+  "estimated_steel_E_GPa": 200,
+  "estimated_steel_yield_MPa": 150,
+  "stress_safety_factor": 3,
+  "max_shaft_deflection_mm": 0.25,
+  "fastener_head_height_mm": 2.0,
+  "fastener_stock": "M3 button head plus thin jam nut/washer, each side <=2 mm beyond the flat part. Verify purchased hardware; use smooth 3 mm bearing surfaces."
+}

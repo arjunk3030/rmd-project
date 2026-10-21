@@ -1,0 +1,329 @@
+{
+  "name": "Small-body direct six-bar",
+  "provenance": "Editable small-body requirements: 28 mm O-S ground, 50 mm shoulder spacing, 34 mm input shaft spacing. Remote actuator in stand; belt drives right O and 34T gears reverse left O. Fits and loads unverified.",
+  "shoulder_spacing_mm": 50,
+  "left_axial_offset_mm": 0,
+  "gear": {
+    "module_mm": 1,
+    "teeth": 34,
+    "pressure_angle_deg": 20,
+    "face_width_mm": 3,
+    "tooth_thinning_mm": 0.1
+  },
+  "gear_plane_x_mm": -4,
+  "required_clearance_mm": 1,
+  "audit_samples": 1440,
+  "front_crank_plane_x_mm": -16,
+  "front_rod_plane_x_mm": -28.5,
+  "rear_crank_plane_x_mm": 16,
+  "rear_rod_plane_x_mm": 27,
+  "wing_plane_x_mm": 16,
+  "motor": {
+    "candidate": "Unselected single-output continuous servo or geared motor in pedestal",
+    "status": "40 x 20 x 40 mm envelope reserved only; no torque/spline/driver selection verified",
+    "front_face_x_mm": 14,
+    "body_length_mm": 40,
+    "face_mm": 20,
+    "front_shaft_mm": 11,
+    "rear_shaft_mm": 0,
+    "shaft_diameter_mm": 3
+  },
+  "base_center_mm": [
+    15,
+    0,
+    -156
+  ],
+  "base_size_mm": [
+    100,
+    90,
+    8
+  ],
+  "parameter_names": [
+    "a1",
+    "b1",
+    "c1",
+    "kappa",
+    "phase_A",
+    "a2",
+    "phase_B",
+    "horn",
+    "eta",
+    "rod"
+  ],
+  "lower_bounds": [
+    8.5,
+    10,
+    12,
+    -3.141592653589793,
+    -3.141592653589793,
+    8.5,
+    -3.141592653589793,
+    8.5,
+    -3.141592653589793,
+    75
+  ],
+  "upper_bounds": [
+    12.4,
+    40,
+    36,
+    3.141592653589793,
+    3.141592653589793,
+    13.7,
+    3.141592653589793,
+    36,
+    3.141592653589793,
+    145
+  ],
+  "fit_samples": 120,
+  "polish_samples": 180,
+  "random_starts": 2,
+  "random_seed": 122,
+  "transmission_fit_deg": 41,
+  "transmission_polish_deg": 40.5,
+  "minimum_fold_polish_deg": 14,
+  "core_fold_polish_max_deg": 42.5,
+  "downstroke_fold_polish_max_deg": 50,
+  "reference_shoulder_weight": 1,
+  "reference_fold_weight": 0.35,
+  "synthesis_method": "Joint constrained synthesis using bounded least squares and SLSQP with explicit small ground, 100/150 mm wing segments, user-proposed motion targets, and minimum 40 degree transmission acceptance. Warm start from staged shoulder/rod fitting; independent physical-envelope validation follows.",
+  "front_rocker_plane_x_mm": -22,
+  "panel_direction": -1,
+  "materials": {
+    "link_stock": "3 mm plywood; editable trial stock, not strength-qualified",
+    "link_density_g_per_mm3": 0.00065,
+    "rod_E_GPa_assumed": 2.0,
+    "wing_covering": "Light fabric, separate inner/outer pieces; 0.3 mm nominal thickness envelope",
+    "wing_mass_assumptions": "Existing 28 g inner / 20 g outer estimates retained until actual wood, fabric and hardware are weighed",
+    "gear_stock": "3 mm fine-pitch gear blank with 3 mm metal hub; accuracy/strength unverified. Prefer bought gears if laser-cut wood teeth are poor."
+  },
+  "body_cover": {
+    "enabled": true,
+    "plane_x_mm": -38,
+    "thickness_mm": 3,
+    "provenance": "Chosen compact bat face: 74 x 80 mm. Editable outline included in nominal clearance checks.",
+    "quads_yz_mm": [
+      [
+        [
+          -13.875,
+          10
+        ],
+        [
+          13.875,
+          10
+        ],
+        [
+          26.59375,
+          -16
+        ],
+        [
+          -26.59375,
+          -16
+        ]
+      ],
+      [
+        [
+          -26.59375,
+          -16
+        ],
+        [
+          26.59375,
+          -16
+        ],
+        [
+          37.0,
+          -36
+        ],
+        [
+          -37.0,
+          -36
+        ]
+      ],
+      [
+        [
+          -37.0,
+          -36
+        ],
+        [
+          37.0,
+          -36
+        ],
+        [
+          20.8125,
+          -53
+        ],
+        [
+          -20.8125,
+          -53
+        ]
+      ],
+      [
+        [
+          -20.8125,
+          -53
+        ],
+        [
+          20.8125,
+          -53
+        ],
+        [
+          0.0,
+          -58
+        ],
+        [
+          0.0,
+          -58
+        ]
+      ],
+      [
+        [
+          -13.875,
+          10
+        ],
+        [
+          -5.78125,
+          10
+        ],
+        [
+          -13.875,
+          22
+        ],
+        [
+          -13.875,
+          22
+        ]
+      ],
+      [
+        [
+          5.78125,
+          10
+        ],
+        [
+          13.875,
+          10
+        ],
+        [
+          13.875,
+          22
+        ],
+        [
+          13.875,
+          22
+        ]
+      ]
+    ],
+    "outline_yz_mm": [
+      [
+        -13.875,
+        22
+      ],
+      [
+        -5.78125,
+        10
+      ],
+      [
+        5.78125,
+        10
+      ],
+      [
+        13.875,
+        22
+      ],
+      [
+        13.875,
+        10
+      ],
+      [
+        26.59375,
+        -16
+      ],
+      [
+        37.0,
+        -36
+      ],
+      [
+        20.8125,
+        -53
+      ],
+      [
+        0.0,
+        -58
+      ],
+      [
+        -20.8125,
+        -53
+      ],
+      [
+        -37.0,
+        -36
+      ],
+      [
+        -26.59375,
+        -16
+      ],
+      [
+        -13.875,
+        10
+      ]
+    ]
+  },
+  "packaging_findings": {
+    "retained": "Short supported input shafts with front/rear crank arms; left rear links staggered 6 mm for clearance. Actuator removed from body; both loops re-synthesized.",
+    "servo_status": "Single-output continuous actuator reserved in stand. Standard limited-angle servo cannot run the current full-rotation input."
+  },
+  "ground_mm": 28,
+  "body_requirement": {
+    "max_width_mm": 76,
+    "max_height_mm": 80,
+    "max_depth_mm": 80,
+    "wing_length_each_mm": 250,
+    "actuator_location": "stationary pedestal, outside the bat body",
+    "provenance": "Chosen visual/packaging requirements, not measurements of a bat."
+  },
+  "left_layer_spread_mm": 6,
+  "body_package": "small_plywood_remote_drive",
+  "shaft_diameter_mm": 3,
+  "belt": {
+    "teeth": 20,
+    "pitch_mm": 2,
+    "width_mm": 6,
+    "plane_x_mm": 3,
+    "center_distance_mm": 100,
+    "pitch_length_mm": 240,
+    "status": "Chosen timing-belt geometry; confirm available pulley/hub dimensions and tension adjustment"
+  },
+  "peak_fold_polish_min_deg": 65,
+  "peak_fold_polish_max_deg": 73,
+  "wing_lengths_mm": {
+    "inner": 100,
+    "outer": 150
+  },
+  "motion_targets": {
+    "shoulder_min_deg": -30,
+    "shoulder_max_deg": 35,
+    "fold_min_deg": 15,
+    "fold_max_deg": 70,
+    "peak_fold_cycle_fraction": 0.75,
+    "provenance": "User-proposed aesthetic targets, not measured biology. Replaces the earlier straight downstroke requirement."
+  },
+  "motion_acceptance": {
+    "minimum_fold_deg": 12,
+    "maximum_fold_deg": 75,
+    "peak_fold_min_deg": 65,
+    "core_downstroke_max_deg": 45,
+    "downstroke_max_deg": 52,
+    "shoulder_rms_max_deg": 6,
+    "fold_upstroke_rms_max_deg": 7,
+    "shoulder_max_range_deg": [
+      30,
+      40
+    ],
+    "shoulder_min_range_deg": [
+      -35,
+      -18
+    ],
+    "provenance": "User prioritizes transmission >=40 degrees and small body over exact proposed angles. Shoulder downstroke may reduce to -18 degrees; actual achieved extrema and target errors are reported."
+  },
+  "panel_root_relief_mm": 20,
+  "panel_hinge_relief_mm": 10,
+  "minimum_transmission_deg": 40
+}

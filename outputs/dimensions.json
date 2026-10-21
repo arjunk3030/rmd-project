@@ -1,0 +1,500 @@
+{
+  "approach": "C",
+  "chosen": "constrained_refined",
+  "optimized_design_deg_mm": {
+    "linkage1_crank_a1_mm": 16.412926542268618,
+    "linkage1_coupler_b1_mm": 38.64647266329335,
+    "linkage1_rocker_c1_mm": 40.39148176719604,
+    "linkage1_ground_d1_mm": 50.0,
+    "rocker1_offset_kappa1_deg": -79.89630993758892,
+    "linkage2_crank_a2_mm": 13.923786596023236,
+    "linkage2_coupler_b2_mm": 96.91215274083373,
+    "linkage2_rocker_c2_mm": 34.36749985292235,
+    "linkage2_ground_d2_mm": 110.0,
+    "elbow_offset_eta_deg": -97.2736563066567,
+    "drive_phase_delta_deg": 73.83445465614699
+  },
+  "assembly_branch": {
+    "linkage1": 1,
+    "linkage2": 1
+  },
+  "pivot_locations_flap_plane_mm": {
+    "shoulder_S": [
+      0.0,
+      0.0
+    ],
+    "motor_O": [
+      -30.0,
+      -40.0
+    ],
+    "ground_line_angle_O_to_S_deg": 53.13010235415598
+  },
+  "input_digest": "40ea0d941858ae4b73f2aa4999b83455e240ca11ba167bb1310b7f9ae7eefcfc",
+  "inputs": {
+    "layout": {
+      "inner_length_mm": 110.0,
+      "outer_length_mm": 140.0,
+      "motor_offset_mm": [
+        -30.0,
+        -40.0
+      ],
+      "crank1_phase_deg": 0.0,
+      "layer_x_mm": {
+        "wing": 0.0,
+        "linkage1": 8.0,
+        "linkage1_rod": 2.0,
+        "linkage2": -12.0,
+        "linkage2_rod": -20.0
+      },
+      "chord_inner_mm": 70.0,
+      "chord_outer_mm": 55.0,
+      "provenance": "Shared canonical kinematic/panel inputs only. The motor offset fixes the 50 mm reference ground length, not either assembled body width. Actual package pivots are derived from compact_drive.json or direct_drive.json. Panel and motion values are editable engineering assumptions.",
+      "membrane_front_x_mm": 5.0,
+      "membrane_direction": 1.0,
+      "membrane_root_relief_mm": 40.0,
+      "membrane_hinge_relief_mm": 14,
+      "drive_ratio": 1.0,
+      "drive_sign": -1,
+      "panel_style": "tapered",
+      "panel_pitch_deg": 15.0,
+      "inner_panel_root_chord_mm": 32.0,
+      "outer_panel_tip_chord_mm": 12.0,
+      "outer_panel_sweep_mm": 10.0,
+      "membrane_thickness_mm": 0.3
+    },
+    "targets": {
+      "provenance": "Stylized guessed bat-like motion: \u00b125 degree shoulder, 50 degree return fold. Not measured animal data.",
+      "samples": [
+        [
+          0,
+          25,
+          14
+        ],
+        [
+          0.125,
+          17.7,
+          3.5
+        ],
+        [
+          0.25,
+          0,
+          0
+        ],
+        [
+          0.375,
+          -17.7,
+          3.5
+        ],
+        [
+          0.5,
+          -25,
+          14
+        ],
+        [
+          0.625,
+          -17.7,
+          38.5
+        ],
+        [
+          0.75,
+          0,
+          50
+        ],
+        [
+          0.875,
+          17.7,
+          38.5
+        ],
+        [
+          1,
+          25,
+          14
+        ]
+      ],
+      "freudenstein_sample_indices": {
+        "linkage1": [
+          0,
+          2,
+          4
+        ],
+        "linkage2": [
+          0,
+          4,
+          6
+        ]
+      }
+    },
+    "requirements": {
+      "mu_min_deg": 40.0,
+      "downstroke_fold_tol_deg": 20.0,
+      "hyperextension_tol_deg": 0.0,
+      "shoulder_rms_max_deg": 5.0,
+      "upstroke_fold_rms_max_deg": 5.0,
+      "screen_samples": 1440,
+      "fold_peak_min_deg": 45.0,
+      "fold_peak_max_deg": 58.0,
+      "core_downstroke_phase_deg": [
+        45.0,
+        135.0
+      ],
+      "core_downstroke_fold_max_deg": 5.0
+    },
+    "solver": {
+      "provenance": "Numerical search settings and guessed packaging bounds; not biological data.",
+      "parameter_keys": [
+        "a1",
+        "b1",
+        "c1",
+        "kappa1",
+        "a2",
+        "b2",
+        "c2",
+        "eta",
+        "delta"
+      ],
+      "lower_bounds": [
+        8,
+        15,
+        15,
+        -3.141592653589793,
+        12.0,
+        65,
+        18,
+        -3.141592653589793,
+        -3.141592653589793
+      ],
+      "upper_bounds": [
+        25,
+        80,
+        60,
+        3.141592653589793,
+        22,
+        135,
+        38,
+        3.141592653589793,
+        3.141592653589793
+      ],
+      "optimization_samples": 144,
+      "max_nfev": 1200,
+      "safety_margin_deg": 0.3
+    },
+    "build": {
+      "provenance": "Shared stock/hardware envelope and estimated mass assumptions for the two compact options. Design-specific motor positions, shafts and frames live in each package config.",
+      "animation_cycle_seconds": 4.0,
+      "motor_count": 1,
+      "gear": {
+        "module_mm": 1.0,
+        "teeth": 50,
+        "pressure_angle_deg": 20.0,
+        "face_width_mm": 6.0,
+        "tooth_thinning_mm": 0.1,
+        "hub_radius_mm": 9.0,
+        "hub_width_mm": 4.0
+      },
+      "shaft_diameter_mm": 5.0,
+      "bearing": {
+        "name": "625-2Z",
+        "bore_mm": 5.0,
+        "od_mm": 16.0,
+        "width_mm": 5.0
+      },
+      "bearing_fit_diameter_mm": 16.15,
+      "link_thickness_mm": 3.0,
+      "link_width_mm": 8.0,
+      "pivot_hole_mm": 3.2,
+      "mass_estimates_g": {
+        "inner_wing_with_hub": 28.0,
+        "outer_wing_with_hub": 20.0,
+        "link_density_g_per_mm3": 0.00127,
+        "gear_each": 16.0
+      },
+      "friction_allowance_Nm": 0.025,
+      "torque_service_factor": 3.0,
+      "root_hub": {
+        "radius_mm": 12.0,
+        "x_min_mm": -3.0,
+        "x_max_mm": 10.0,
+        "bearing_centers_x_mm": [
+          0.0,
+          6.0
+        ]
+      },
+      "elbow_hub": {
+        "radius_mm": 12.0,
+        "x_min_mm": -3.0,
+        "x_max_mm": 10.0
+      },
+      "elbow_shaft_x_mm": [
+        -14.0,
+        10.0
+      ],
+      "outer_spar_x_mm": -6.0,
+      "fastener_head_radius_mm": 3.0,
+      "crank_clamp_hubs": {
+        "crank1_x_mm": [
+          6.5,
+          16.5
+        ],
+        "crank2_x_mm": [
+          -15.0,
+          -5.0
+        ],
+        "outer_horn_x_mm": [
+          -15.0,
+          -4.0
+        ],
+        "radius_mm": 10.0,
+        "crank2_radius_mm": 6.0
+      },
+      "assumed_mesh_efficiency": 0.95,
+      "estimated_steel_E_GPa": 200,
+      "estimated_steel_yield_MPa": 150,
+      "stress_safety_factor": 3,
+      "max_shaft_deflection_mm": 0.25,
+      "fastener_head_height_mm": 2.0,
+      "fastener_stock": "M3 button head plus thin jam nut/washer, each side <=2 mm beyond the flat part. Verify purchased hardware; use smooth 3 mm bearing surfaces."
+    }
+  },
+  "seed_geometry": {
+    "optimized_design_deg_mm": {
+      "linkage1_crank_a1_mm": 15.112472601112506,
+      "linkage1_coupler_b1_mm": 48.42716467694109,
+      "linkage1_rocker_c1_mm": 36.027730022400455,
+      "linkage1_ground_d1_mm": 50.0,
+      "rocker1_offset_kappa1_deg": -59.99999999999993,
+      "linkage2_crank_a2_mm": 15.60144551905075,
+      "linkage2_coupler_b2_mm": 95.19787075084533,
+      "linkage2_rocker_c2_mm": 37.71408538231208,
+      "linkage2_ground_d2_mm": 110.0,
+      "elbow_offset_eta_deg": -100.00000000000009,
+      "drive_phase_delta_deg": 69.99999999999972
+    },
+    "assembly_branch": {
+      "linkage1": 1,
+      "linkage2": 1
+    },
+    "pivot_locations_flap_plane_mm": {
+      "shoulder_S": [
+        0.0,
+        0.0
+      ],
+      "motor_O": [
+        -30.0,
+        -40.0
+      ],
+      "ground_line_angle_O_to_S_deg": 53.13010235415598
+    }
+  },
+  "seed_info": {
+    "linkage1": {
+      "rms_alpha_deg": 4.515134001178669,
+      "mu1_min_deg": 45.97092465010713
+    },
+    "linkage2": {
+      "rms_F_deg": 1.155396817422789,
+      "mu2_min_deg": 42.562180622013145
+    },
+    "screen": {
+      "assembles_full_cycle": true,
+      "screen_samples": 1440,
+      "grid_step_deg": 0.25,
+      "passes": false,
+      "grashof_1": true,
+      "grashof_2": true,
+      "mu1_min_deg": 45.9526191911381,
+      "mu2_min_deg": 42.53972440444725,
+      "mu_screen_deg": 40.0,
+      "u2_monotonic": true,
+      "u2_min_step_deg": 0.11237175643660416,
+      "rms_alpha_deg": 4.515144280861543,
+      "max_alpha_err_deg": 9.077188156627722,
+      "rms_F_upstroke_deg": 1.507026887558587,
+      "max_F_downstroke_deg": 16.85988123577679,
+      "max_F_nominal_downstroke_deg": 14.000000000000007,
+      "max_F_core_downstroke_deg": 1.6569264955785539,
+      "min_F_deg": -1.363998990771636,
+      "max_F_deg": 50.017422968692,
+      "theta_at_max_F_deg": 271.5,
+      "shoulder_top_theta_deg": 18.75,
+      "shoulder_bottom_theta_deg": 187.0,
+      "downstroke_fold_tol_deg": 20.0,
+      "cycle_closure_error_mm": 2.0691316789454157e-13,
+      "max_link_length_error_mm": 4.263256414560601e-14,
+      "branches_fixed_by_construction": true,
+      "checks": {
+        "packaging_bounds": true,
+        "grashof_1": true,
+        "grashof_2": true,
+        "transmission_1": true,
+        "transmission_2": true,
+        "actual_downstroke_fold": true,
+        "core_downstroke_straightness": true,
+        "hyperextension": false,
+        "shoulder_tracking": true,
+        "fold_tracking": true,
+        "fold_peak_range": true,
+        "peak_fold_on_actual_upstroke": true,
+        "periodic_closure": true,
+        "rigid_link_lengths": true
+      },
+      "failed_checks": [
+        "hyperextension"
+      ]
+    }
+  },
+  "optimisation_info": {
+    "cost": 4.609567815172271,
+    "nfev": 67,
+    "screen": {
+      "assembles_full_cycle": true,
+      "screen_samples": 1440,
+      "grid_step_deg": 0.25,
+      "passes": false,
+      "grashof_1": true,
+      "grashof_2": true,
+      "mu1_min_deg": 50.320480721421475,
+      "mu2_min_deg": 47.08027475197902,
+      "mu_screen_deg": 40.0,
+      "u2_monotonic": true,
+      "u2_min_step_deg": 0.12003138474115371,
+      "rms_alpha_deg": 2.383487139664295,
+      "max_alpha_err_deg": 3.8136906074469756,
+      "rms_F_upstroke_deg": 0.9817301779089788,
+      "max_F_downstroke_deg": 16.56809940170103,
+      "max_F_nominal_downstroke_deg": 16.161226138460258,
+      "max_F_core_downstroke_deg": 3.097318468999559,
+      "min_F_deg": -0.0160944713743602,
+      "max_F_deg": 50.26493303764066,
+      "theta_at_max_F_deg": 269.50000000000006,
+      "shoulder_top_theta_deg": 8.25,
+      "shoulder_bottom_theta_deg": 181.0,
+      "downstroke_fold_tol_deg": 20.0,
+      "cycle_closure_error_mm": 2.842170943040401e-14,
+      "max_link_length_error_mm": 4.263256414560601e-14,
+      "branches_fixed_by_construction": true,
+      "checks": {
+        "packaging_bounds": true,
+        "grashof_1": true,
+        "grashof_2": true,
+        "transmission_1": true,
+        "transmission_2": true,
+        "actual_downstroke_fold": true,
+        "core_downstroke_straightness": true,
+        "hyperextension": false,
+        "shoulder_tracking": true,
+        "fold_tracking": true,
+        "fold_peak_range": true,
+        "peak_fold_on_actual_upstroke": true,
+        "periodic_closure": true,
+        "rigid_link_lengths": true
+      },
+      "failed_checks": [
+        "hyperextension"
+      ]
+    }
+  },
+  "band_polish_info": {
+    "cost": 2.048984217525172,
+    "nfev": 10,
+    "screen": {
+      "assembles_full_cycle": true,
+      "screen_samples": 1440,
+      "grid_step_deg": 0.25,
+      "passes": false,
+      "grashof_1": true,
+      "grashof_2": true,
+      "mu1_min_deg": 50.32048980357031,
+      "mu2_min_deg": 47.094404681719745,
+      "mu_screen_deg": 40.0,
+      "u2_monotonic": true,
+      "u2_min_step_deg": 0.1200323755362253,
+      "rms_alpha_deg": 2.3834882096464005,
+      "max_alpha_err_deg": 3.8136272124508417,
+      "rms_F_upstroke_deg": 0.9826825262492745,
+      "max_F_downstroke_deg": 16.572957665462457,
+      "max_F_nominal_downstroke_deg": 16.1662197061312,
+      "max_F_core_downstroke_deg": 3.105629072796489,
+      "min_F_deg": -0.005008607011653,
+      "max_F_deg": 50.2653420418006,
+      "theta_at_max_F_deg": 269.50000000000006,
+      "shoulder_top_theta_deg": 8.25,
+      "shoulder_bottom_theta_deg": 181.0,
+      "downstroke_fold_tol_deg": 20.0,
+      "cycle_closure_error_mm": 6.355287432313019e-14,
+      "max_link_length_error_mm": 4.263256414560601e-14,
+      "branches_fixed_by_construction": true,
+      "checks": {
+        "packaging_bounds": true,
+        "grashof_1": true,
+        "grashof_2": true,
+        "transmission_1": true,
+        "transmission_2": true,
+        "actual_downstroke_fold": true,
+        "core_downstroke_straightness": true,
+        "hyperextension": false,
+        "shoulder_tracking": true,
+        "fold_tracking": true,
+        "fold_peak_range": true,
+        "peak_fold_on_actual_upstroke": true,
+        "periodic_closure": true,
+        "rigid_link_lengths": true
+      },
+      "failed_checks": [
+        "hyperextension"
+      ]
+    }
+  },
+  "constraint_refinement_info": {
+    "method": "SLSQP",
+    "success": true,
+    "message": "Optimization terminated successfully",
+    "iterations": 60,
+    "margin_deg": 0.3
+  },
+  "chosen_screen": {
+    "assembles_full_cycle": true,
+    "screen_samples": 1440,
+    "grid_step_deg": 0.25,
+    "passes": true,
+    "grashof_1": true,
+    "grashof_2": true,
+    "mu1_min_deg": 50.23536707867186,
+    "mu2_min_deg": 44.09529538141421,
+    "mu_screen_deg": 40.0,
+    "u2_monotonic": true,
+    "u2_min_step_deg": 0.1199673536657237,
+    "rms_alpha_deg": 2.3838826670055515,
+    "max_alpha_err_deg": 3.809051625605948,
+    "rms_F_upstroke_deg": 1.0281709900838543,
+    "max_F_downstroke_deg": 16.163444706913115,
+    "max_F_nominal_downstroke_deg": 15.863440670553514,
+    "max_F_core_downstroke_deg": 3.4032267725599255,
+    "min_F_deg": 0.29997255246681154,
+    "max_F_deg": 50.47112355465711,
+    "theta_at_max_F_deg": 269.75,
+    "shoulder_top_theta_deg": 8.25,
+    "shoulder_bottom_theta_deg": 181.0,
+    "downstroke_fold_tol_deg": 20.0,
+    "cycle_closure_error_mm": 1.7763568394002505e-14,
+    "max_link_length_error_mm": 5.684341886080802e-14,
+    "branches_fixed_by_construction": true,
+    "checks": {
+      "packaging_bounds": true,
+      "grashof_1": true,
+      "grashof_2": true,
+      "transmission_1": true,
+      "transmission_2": true,
+      "actual_downstroke_fold": true,
+      "core_downstroke_straightness": true,
+      "hyperextension": true,
+      "shoulder_tracking": true,
+      "fold_tracking": true,
+      "fold_peak_range": true,
+      "peak_fold_on_actual_upstroke": true,
+      "periodic_closure": true,
+      "rigid_link_lengths": true
+    },
+    "failed_checks": []
+  },
+  "coordinate_system": "Canonical geared mechanism only; actual compact placement is in the per-design layout export."
+}

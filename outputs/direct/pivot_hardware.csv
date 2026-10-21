@@ -1,0 +1,9 @@
+pivot,minimum_smooth_grip_mm,max_head_or_nut_stack_mm,head_OD_envelope_mm,note
+R/pin_A,15.5,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"
+R/pin_B,9.5,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"
+R/pin_D,14.0,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"
+R/pin_Q,9.5,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"
+L/pin_A,15.5,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"
+L/pin_B,9.5,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"
+L/pin_D,14.0,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"
+L/pin_Q,9.5,2,6,"M3 button head/thin jam nut and washers, <=2 mm beyond each part; smooth 3 mm grip"

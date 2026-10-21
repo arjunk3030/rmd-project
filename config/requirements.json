@@ -1,0 +1,15 @@
+{
+  "mu_min_deg": 40.0,
+  "downstroke_fold_tol_deg": 20.0,
+  "hyperextension_tol_deg": 0.0,
+  "shoulder_rms_max_deg": 5.0,
+  "upstroke_fold_rms_max_deg": 5.0,
+  "screen_samples": 1440,
+  "fold_peak_min_deg": 45.0,
+  "fold_peak_max_deg": 58.0,
+  "core_downstroke_phase_deg": [
+    45.0,
+    135.0
+  ],
+  "core_downstroke_fold_max_deg": 5.0
+}

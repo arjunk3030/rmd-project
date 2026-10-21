@@ -1,0 +1,239 @@
+{
+  "design": "direct",
+  "name": "Small-body direct six-bar",
+  "status": "PASS",
+  "kinematics": {
+    "samples": 1440,
+    "step_deg": 0.25,
+    "first_crank_rotation_deg": 360.0,
+    "mu1_min_deg": 40.50089999996714,
+    "mu2_min_deg": 40.5008999999928,
+    "min_F_deg": 14.000572957840014,
+    "max_F_deg": 65.00057295788612,
+    "peak_fold_theta_deg": 247.25,
+    "max_F_downstroke_deg": 39.46372762108774,
+    "max_F_core_downstroke_deg": 27.337433632912884,
+    "rms_alpha_deg": 4.836414860591246,
+    "rms_F_upstroke_deg": 6.997654745464315,
+    "max_link_length_error_mm": 4.263256414560601e-14,
+    "cycle_closure_error_mm": 7.944109290391274e-15,
+    "fixed_assembly_branches": true,
+    "first_crank_is_shortest": true,
+    "second_loop_classification": "coupled six-bar; Grashof does not apply separately to the elbow loop",
+    "min_alpha_deg": -21.53959512132863,
+    "max_alpha_deg": 36.119961921001455,
+    "target_provenance": {
+      "shoulder_min_deg": -30,
+      "shoulder_max_deg": 35,
+      "fold_min_deg": 15,
+      "fold_max_deg": 70,
+      "peak_fold_cycle_fraction": 0.75,
+      "provenance": "User-proposed aesthetic targets, not measured biology. Replaces the earlier straight downstroke requirement."
+    },
+    "acceptance": {
+      "minimum_fold_deg": 12,
+      "maximum_fold_deg": 75,
+      "peak_fold_min_deg": 65,
+      "core_downstroke_max_deg": 45,
+      "downstroke_max_deg": 52,
+      "shoulder_rms_max_deg": 6,
+      "fold_upstroke_rms_max_deg": 7,
+      "shoulder_max_range_deg": [
+        30,
+        40
+      ],
+      "shoulder_min_range_deg": [
+        -35,
+        -18
+      ],
+      "provenance": "User prioritizes transmission >=40 degrees and small body over exact proposed angles. Shoulder downstroke may reduce to -18 degrees; actual achieved extrema and target errors are reported."
+    },
+    "downstroke_requirement": "Bent downstroke, replacing previous straight-wing requirement",
+    "checks": {
+      "assembles_full_cycle": true,
+      "full_input_rotation": true,
+      "first_loop_Grashof": true,
+      "transmission_shoulder": true,
+      "transmission_elbow": true,
+      "no_hyperextension": true,
+      "downstroke_fold": true,
+      "core_downstroke_straightness": true,
+      "peak_fold": true,
+      "peak_on_upstroke": true,
+      "shoulder_target_fit": true,
+      "upstroke_target_fit": true,
+      "rigid_lengths": true,
+      "cycle_closure": true,
+      "peak_near_mid_upstroke": true,
+      "shoulder_extrema": true
+    },
+    "failed_checks": [],
+    "passes": true
+  },
+  "clearance": {
+    "status": "PASS",
+    "scope": "Nominal full-cycle 3D envelope, stationary structures and coplanar gear-profile audit; not physical fit/load certification.",
+    "samples": 1440,
+    "conflict_count": 0,
+    "conflicts": [],
+    "gear_vertex_penetrations": 0,
+    "minimum_nonadjacent_part_clearance_mm": 2.022107026729495,
+    "shoulder_spacing_mm": 50.0,
+    "input_shaft_spacing_mm": 34,
+    "input_offset_local_mm": [
+      -8.0,
+      -26.832815729997478
+    ],
+    "assembly_rotation_deg": 20.268348046823775,
+    "rocker_mounting_offset_deg": -67.27826365664183,
+    "min_transmission_angle_deg": 40.50089999996714,
+    "min_elbow_transmission_angle_deg": 40.5008999999928,
+    "max_elbow_fold_deg": 65.00057295788612,
+    "gear_count": 2,
+    "belt_count": 1,
+    "links_mm": {
+      "a1": 11.816197190452613,
+      "b1": 20.57371985692415,
+      "c1": 24.77533813002786,
+      "a2": 12.341103362423812,
+      "horn": 21.069630838455993,
+      "rod": 114.46756177417743
+    },
+    "ground_mm": 28,
+    "prototype_layout_passes": true,
+    "build_ready": false,
+    "limitations": [
+      "Trial bearing fits, hub clamps and axial retainers require hardware verification.",
+      "Controller and wiring not packaged; panel thickness/flex and loaded strength unverified.",
+      "Nominal gear polygons omit root fillets, manufacturing error and deflection."
+    ]
+  },
+  "hardware": {
+    "body_envelope": {
+      "depth_mm": 76.0,
+      "width_mm": 74.0,
+      "height_mm": 80.0,
+      "scope": "Crank/pin sweep, short input shafts, face; outgoing wing links and remote stand excluded.",
+      "shoulder_spacing_mm": 50,
+      "ground_mm": 28,
+      "maximum_span_if_straight_mm": 550
+    },
+    "checks": {
+      "gear_contact_ratio": true,
+      "no_standard_undercut": true,
+      "bearing_seat_edge_ligament": true,
+      "shaft_hub_engagement": true,
+      "drive_pin_web_ligament": true,
+      "body_width": true,
+      "body_height": true,
+      "body_depth": true
+    },
+    "passes": true,
+    "gear_geometry": [
+      {
+        "teeth": 34,
+        "module_mm": 1,
+        "nominal_contact_ratio": 1.6805692246486017,
+        "no_standard_undercut": true
+      }
+    ],
+    "minimum_bearing_seat_ligament_mm": 2.95,
+    "rear_hub_engagement_mm": 2.5,
+    "motor_extension_shaft_gap_mm": null,
+    "drive_pin_web_ligament_mm": 2.4,
+    "verified_with_purchased_hardware": false
+  },
+  "loads": {
+    "motor_count": 1,
+    "input_rpm": 15.0,
+    "cycle_seconds": 4.0,
+    "estimated_peak_constant_speed_torque_Nm": 0.06180595921965421,
+    "friction_allowance_Nm": 0.05,
+    "startup_ramp_seconds_assumed": 2,
+    "startup_torque_allowance_Nm": 0.0004376007380880079,
+    "assumed_path_efficiency": 0.95,
+    "service_factor": 3.0,
+    "required_running_torque_target_Nm": 0.35445334723497546,
+    "peak_mechanical_power_W": 0.09708457371626801,
+    "elbow_rod_force_peak_N": 0.7015812661305079,
+    "factored_elbow_rod_force_N": 2.1047437983915236,
+    "elbow_axle_overhang_mm": 3,
+    "estimated_elbow_shaft_bending_MPa": 2.3820826983539383,
+    "estimated_elbow_shaft_deflection_mm": 2.3820826983539383e-05,
+    "assumed_steel_yield_MPa": 150,
+    "assumed_steel_E_GPa": 200,
+    "rod_material": "3 mm plywood; editable trial stock, not strength-qualified",
+    "rod_E_GPa_assumed": 2.0,
+    "ideal_pinned_rod_buckling_N": 27.116734051450656,
+    "conditional_strength_checks": {
+      "elbow_shaft_bending": true,
+      "elbow_shaft_deflection": true,
+      "ideal_rod_buckling": true
+    },
+    "mass_assumptions": [
+      {
+        "part": "R/crank1",
+        "estimated_mass_g": 0.28235036696306226
+      },
+      {
+        "part": "R/coupler1",
+        "estimated_mass_g": 0.41896772056001835
+      },
+      {
+        "part": "R/rocker1",
+        "estimated_mass_g": 0.4845129656204361
+      },
+      {
+        "part": "R/rod2_direct",
+        "estimated_mass_g": 1.8837116544691694
+      },
+      {
+        "part": "R/elbow_horn",
+        "estimated_mass_g": 0.4267039318719152
+      },
+      {
+        "part": "R/inner_spar",
+        "estimated_mass_g": 28.0
+      },
+      {
+        "part": "R/outer_spar",
+        "estimated_mass_g": 20.0
+      },
+      {
+        "part": "L/crank1",
+        "estimated_mass_g": 0.28235036696306226
+      },
+      {
+        "part": "L/coupler1",
+        "estimated_mass_g": 0.41896772056001835
+      },
+      {
+        "part": "L/rocker1",
+        "estimated_mass_g": 0.4845129656204361
+      },
+      {
+        "part": "L/rod2_direct",
+        "estimated_mass_g": 1.8837116544691694
+      },
+      {
+        "part": "L/elbow_horn",
+        "estimated_mass_g": 0.4267039318719152
+      },
+      {
+        "part": "L/inner_spar",
+        "estimated_mass_g": 28.0
+      },
+      {
+        "part": "L/outer_spar",
+        "estimated_mass_g": 20.0
+      }
+    ],
+    "running_torque_verified": false,
+    "build_ready": false,
+    "method": "tau=V_prime + 0.5*omega^2*Ieff_prime. Both wings and moving links; distributed rigid members, gravity and inertia.",
+    "limits": "All masses, friction, link stiffness and steel properties are assumptions. Wood grain, ply quality, hole tear-out and fabric tension are unverified. Elbow cantilever estimate is not a full shaft/bearing/pin/gear-tooth strength analysis. No aerodynamics, impacts, compliance or resonance. Holding torque is not running torque; test the actual motor and hardware."
+  },
+  "nominal_prototype_passes": true,
+  "build_ready": false,
+  "meaning": "PASS is the nominal sampled mechanism and assumed-load envelope. Fits, material properties, dynamic motor torque, retention and loaded operation remain unverified."
+}

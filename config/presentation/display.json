@@ -1,0 +1,6 @@
+{
+  "cycle_seconds": 4.0,
+  "video_dpi": 90,
+  "video_bitrate_kbps": 1800,
+  "note": "Presentation playback only. Changing cycle_seconds does not validate motor loads at a new physical speed."
+}
