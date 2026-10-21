@@ -3,10 +3,10 @@
 <nav><a href="index.html">All demos</a> · <a href="diagnostics/index.html">Evidence plots</a></nav>
 <h1>One wing: a Stephenson six-bar</h1>
 
-<nav><button id="play">Pause</button><input aria-label="Crank angle" id="scrub" type="range" min="0" value="0"><label><input id="targets" type="checkbox" checked> Target wing pose</label><label><input id="triangles" type="checkbox" checked> Shade rigid triangles</label><select id="loop" aria-label="Highlight loop"><option value="all">All six links</option><option value="shoulder">Shoulder loop O–A–B–S–O</option><option value="elbow">Elbow loop O–D–Q–E–S–O</option></select></nav>
+<nav><button id="play">Pause</button><input aria-label="Crank angle" id="scrub" type="range" min="0" value="0"><label><input id="targets" type="checkbox" checked> Target wing pose</label><label><input id="trace" type="checkbox" checked> Wingtip path</label><label><input id="triangles" type="checkbox" checked> Shade rigid triangles</label><select id="loop" aria-label="Highlight loop"><option value="all">All six links</option><option value="shoulder">Shoulder loop O–A–B–S–O</option><option value="elbow">Elbow loop O–D–Q–E–S–O</option></select></nav>
 <main><section><h2>Complete right wing</h2><svg id="full" role="img" aria-label="Animated six-bar mechanism"></svg></section><section><h2>Enlarged shoulder and crank</h2><svg id="detail" role="img" aria-label="Close-up of the shared crank and inner wing"></svg></section></main>
 <p id="readout"></p>
-<main><section><h2>Count rigid bodies, not separate wooden pieces</h2><p class="note"><span style="display:inline-block;width:28px;border-top:2px dashed #758397;vertical-align:middle;margin-right:6px"></span>Dark gray dashed: target wing position<br><span style="display:inline-block;width:28px;border-top:3px solid #b8c3cf;vertical-align:middle;margin-right:6px"></span>Light gray solid (ending at T): actual wing position</p><ol>
+<main><section><h2>Count rigid bodies, not separate wooden pieces</h2><p class="note"><span style="display:inline-block;width:28px;border-top:2px dashed #758397;vertical-align:middle;margin-right:6px"></span>Dark gray dashed: target wing position<br><span style="display:inline-block;width:28px;border-top:3px solid #b8c3cf;vertical-align:middle;margin-right:6px"></span>Light gray solid (ending at T): actual wing position<br><span style="display:inline-block;width:28px;border-top:2px solid #9b59b6;vertical-align:middle;margin-right:6px"></span>Purple curve: actual wingtip T path over one cycle</p><ol>
 <li><b style="color:#9faab6">Frame O–S:</b> the only stationary link.</li>
 <li><b style="color:#438bff">Crank O–A–D:</b> blue shoulder arm and orange elbow arm locked to one shaft; one moving link. The blue triangle groups them.</li>
 <li><b style="color:#438bff">Shoulder coupler A–B (blue).</b></li>
@@ -18,6 +18,7 @@
 const POSES=__POSES__;
 const $=id=>document.getElementById(id);let frame=0,playing=true,last=null;
 $('scrub').max=POSES.length-1;
+const tipPath=[...POSES.map(p=>p.points.T),POSES[0].points.T].map(p=>p.join(',')).join(' ');
 const colors=['#9faab6','#438bff','#438bff','#17becf','#ff8c1a','#ef5959'];
 const all=POSES.flatMap(f=>Object.values(f.points));
 const minX=Math.min(...all.map(p=>p[0]))-14,maxX=Math.max(...all.map(p=>p[0]))+14,minY=Math.min(...all.map(p=>p[1]))-18,maxY=Math.max(...all.map(p=>p[1]))+18;
@@ -26,14 +27,16 @@ function render(id,pose,close){
  const opacity=i=>loop==='all'||(loop==='shoulder'?[0,1,2,3]:[0,1,3,4,5]).includes(i)?1:.12;
  function line(a,b,i,dashed=false){const color=(a==='O'&&b==='D')?'#ff8c1a':((a==='E'&&b==='T')||(a==='S'&&b==='E'))?'#e8ecf1':colors[i];s+=`<line x1="${p[a][0]}" y1="${p[a][1]}" x2="${p[b][0]}" y2="${p[b][1]}" stroke="${color}" stroke-width="${(dashed?1:2)*scale}" ${dashed?'stroke-dasharray="2 2"':''} opacity="${opacity(i)}"/>`;}
  function poly(names,i){s+=`<polygon points="${names.map(n=>p[n].join(',')).join(' ')}" fill="${colors[i]}" fill-opacity="${.18*opacity(i)}"/>`;}
+ if($('trace').checked&&!close)s+=`<polyline data-wingtip-path points="${tipPath}" fill="none" stroke="#9b59b6" stroke-width="1.2" opacity=".75"/>`;
  if($('targets').checked&&!close){const a=pose.target_alpha*Math.PI/180,b=(pose.target_alpha-pose.target_fold)*Math.PI/180,e=[100*Math.cos(a),-100*Math.sin(a)],t=[e[0]+150*Math.cos(b),e[1]-150*Math.sin(b)];s+=`<polyline points="0,0 ${e.join(',')} ${t.join(',')}" fill="none" stroke="#758397" stroke-width="1.5" stroke-dasharray="4 3"/>`;}
  if($('triangles').checked){poly(['O','A','D'],1);poly(['S','B','E'],3);line('A','D',1,true);line('B','E',3,true);}
  line('O','S',0,true);line('O','A',1);line('O','D',1);line('A','B',2);line('S','B',3);line('S','E',3);line('D','Q',4);line('E','Q',5);line('E','T',5);
+ if($('trace').checked&&!close)s+=`<circle cx="${p.T[0]}" cy="${p.T[1]}" r="2" fill="#9b59b6"/>`;
  for(const n of ['O','S']){const[x,y]=p[n];s+=`<path d="M${x-3*scale},${y+5*scale} L${x},${y} L${x+3*scale},${y+5*scale} Z" fill="#9faab6"/>`;}
  for(const[n,[x,y]]of Object.entries(p)){if(n!=='T')s+=`<circle cx="${x}" cy="${y}" r="${1.5*scale}" fill="white" stroke="#172436" stroke-width="${.6*scale}"/>`;s+=`<text x="${x+2.5*scale}" y="${y-3*scale}" font-size="${6*scale}" fill="#172436" stroke="white" stroke-width="${.7*scale}" paint-order="stroke">${n}</text>`;}
  $(id).setAttribute('viewBox',close?'-40 -40 85 95':`${minX} ${minY} ${maxX-minX} ${maxY-minY}`);$(id).innerHTML=s;
 }
 function draw(){const p=POSES[Math.floor(frame)%POSES.length];render('full',p,false);render('detail',p,true);$('scrub').value=Math.floor(frame);$('readout').textContent=`Crank ${p.theta.toFixed(0)}° · Shoulder ${p.alpha.toFixed(1)}° · Elbow fold ${p.fold.toFixed(1)}° · Transmission ${p.mu.map(x=>x.toFixed(1)+'°').join(' / ')}`;}
-$('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'Pause':'Play';};$('scrub').oninput=()=>{frame=+$('scrub').value;playing=false;$('play').textContent='Play';draw();};$('triangles').onchange=draw;$('targets').onchange=draw;$('loop').onchange=draw;
+$('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'Pause':'Play';};$('scrub').oninput=()=>{frame=+$('scrub').value;playing=false;$('play').textContent='Play';draw();};$('trace').onchange=draw;$('triangles').onchange=draw;$('targets').onchange=draw;$('loop').onchange=draw;
 function tick(t){if(last!==null&&playing){frame=(frame+Math.min((t-last)/1000,.1)*POSES.length/__CYCLE__)%POSES.length;draw();}last=t;requestAnimationFrame(tick);}draw();requestAnimationFrame(tick);
 </script></html>

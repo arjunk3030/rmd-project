@@ -45,6 +45,11 @@ for(const kind of ['direct','single_face','bat']){
  const sandbox={document:{getElementById:element},Math,requestAnimationFrame(fn){next=fn;}};
  vm.runInNewContext(script,sandbox);next(0);next(100);
  vm.runInNewContext('for(let i=0;i<POSES.length;i++){frame=i;draw();}',sandbox);
+ if(!element('full').innerHTML.includes('data-wingtip-path'))throw Error('Missing wingtip path');
+ if(element('detail').innerHTML.includes('data-wingtip-path'))throw Error('Path should only appear in full view');
+ element('trace').checked=false;element('trace').onchange();
+ if(element('full').innerHTML.includes('data-wingtip-path'))throw Error('Path toggle failed');
+ vm.runInNewContext("if(tipPath.split(' ').length!==POSES.length+1)throw Error('Incomplete path');",sandbox);
  for(const id of ['targets','triangles']){element(id).checked=false;element(id).onchange();}
  for(const value of ['shoulder','elbow','all']){element('loop').value=value;element('loop').onchange();}
  if(/NaN|Infinity|undefined/.test(element('full').innerHTML)||!element('full').innerHTML.includes('<line'))throw Error('Invalid planar drawing');
