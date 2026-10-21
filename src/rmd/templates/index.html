@@ -3,25 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Explore a bat-inspired Stephenson six-bar mechanism through four interactive animations and measured motion plots.">
-<meta name="theme-color" content="#10151d">
-<title>Batwing · Mechanism study</title>
+<meta name="theme-color" content="#14171b">
+<title>RMD · Six-bar mechanism</title>
 <style>
-:root{color-scheme:dark;--bg:#10151d;--panel:#19222e;--border:#303e4e;--muted:#a6b3c4;--ink:#edf2f7;--accent:#8ce1cd}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,sans-serif}a{color:inherit}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:6px}main,header,footer{max-width:1120px;margin:auto;padding:0 28px}header{display:flex;justify-content:space-between;align-items:center;padding-top:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}.brand{font-weight:750;letter-spacing:.16em;font-size:13px}.class{font-size:12px;color:var(--muted)}.hero{padding:64px 0 42px;max-width:800px}.eyebrow{text-transform:uppercase;font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.045em;line-height:1.05;margin:18px 0 24px;font-weight:650}.intro{font-size:18px;max-width:650px;color:var(--muted)}.primary{display:inline-block;padding:12px 19px;border-radius:7px;background:var(--accent);color:#101c1b;text-decoration:none;font-weight:650;margin-top:12px}.section-title{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:20px 0}h2{font-size:19px;letter-spacing:-.02em;margin:0}.section-title span{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--border);border-radius:12px;background:var(--panel);padding:26px;min-height:235px;transition:border-color .15s,background .15s}.card:hover{border-color:var(--accent);background:#1d2936}.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.number{font:13px ui-monospace,monospace;color:var(--muted)}.tag{font-size:11px;letter-spacing:.03em;padding:3px 9px;border-radius:20px;background:#273646;color:#becfe2}.chosen{background:#244139;color:#9be0cb}.warning{background:#453728;color:#edc68f}h3{font-size:25px;letter-spacing:-.035em;margin:22px 0 7px}.card p{margin:0;color:var(--muted);max-width:430px;font-size:14px}.card .open{margin-top:auto;padding-top:24px;color:var(--accent);font-size:13px;font-weight:650}.evidence{margin:26px 0 0;padding:26px;border:1px solid var(--border);border-radius:12px;display:flex;gap:24px;align-items:center;justify-content:space-between}.evidence p{color:var(--muted);font-size:14px;margin:7px 0 0}.evidence a{flex-shrink:0;color:var(--accent);text-underline-offset:4px}.notes{margin:32px 0 50px;padding-top:24px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:30px}.notes h2,summary{font-size:14px;font-weight:650}.notes p{font-size:13px;color:var(--muted);margin:10px 0}.notes summary{cursor:pointer}code{font-size:12px;color:#d4dfeb;overflow-wrap:anywhere}footer{border-top:1px solid var(--border);padding-top:22px;padding-bottom:28px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px}@media(max-width:640px){header,main,footer{padding-left:20px;padding-right:20px}.hero{padding-top:40px}.grid,.notes{grid-template-columns:1fr}.card{min-height:220px}.evidence{align-items:flex-start;flex-direction:column;gap:14px}.section-title span{display:none}footer{flex-direction:column;gap:5px}.class{max-width:130px;text-align:right}}
+:root{color-scheme:dark;font:14px/1.5 system-ui,sans-serif;color:#dce1e7;background:#14171b}*{box-sizing:border-box}body{margin:0}main{max-width:1000px;margin:36px auto;padding:0 22px}header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid #353b43;padding-bottom:16px}h1{font-size:20px;font-weight:600;margin:0}header span,.muted{color:#929ca8;font-size:12px}h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#929ca8;margin:26px 0 10px}a{color:#acd0f5;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:2px solid #acd0f5;outline-offset:3px}.views{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.view{display:flex;flex-direction:column;gap:14px;padding:16px;border:1px solid #3b434e;border-radius:4px;background:#1e232a;text-decoration:none;color:#e2e7ed}.view:hover{background:#282f39;border-color:#8aa6c2}.view strong{font-size:15px;font-weight:550}.view small{font:11px ui-monospace,monospace;color:#a7b2bf}.view .pass{color:#9ac7ac}.view .fail{color:#dfb17b}.toolbar{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:20px 0 8px}.toolbar h2{margin:0}button{font:inherit;background:#232a33;color:#cbd4df;border:1px solid #3b434e;border-radius:4px;padding:5px 10px;cursor:pointer}button:hover{background:#303b49}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid #30363e}th{color:#929ca8;font-weight:500;font-size:12px}td:last-child{text-align:right}tr:hover td{background:#1a1f25}.links{display:flex;gap:20px;flex-wrap:wrap;padding:15px 0}.note{font-size:12px;color:#929ca8;border-top:1px solid #353b43;margin-top:24px;padding-top:14px}.note b{font-weight:500;color:#c0cad5}#copy-status{font-size:12px;color:#a6c8b4;margin-left:8px}code{font:12px ui-monospace,monospace;color:#b9c5d2}.command{margin-top:24px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}@media(max-width:680px){main{margin-top:20px}.views{grid-template-columns:1fr 1fr}header{align-items:flex-start;flex-direction:column;gap:4px}td,th{padding:10px 5px}header span{font-size:11px}}@media(prefers-reduced-motion:no-preference){a,button{transition:background .12s}}
 </style>
 </head>
-<body>
-<header><div class="brand">BATWING / RMD</div><div class="class">Robot Mechanism Design</div></header>
-<main>
-<section class="hero"><div class="eyebrow">A study in linked motion</div><h1>One mechanism.<br>Four perspectives.</h1><p class="intro">A stationary, bat-inspired wing driven by a Stephenson six-bar. Explore how the wing extends on the downstroke and folds on the upstroke.</p><a class="primary" href="direct_3d.html">Explore the chosen design ↗</a></section>
-<section aria-labelledby="views"><div class="section-title"><h2 id="views">Interactive animations</h2><span>Saved geometry · orbit, pause &amp; inspect</span></div>
-<div class="grid">
-<a class="card" href="direct_3d.html"><div class="card-top"><span class="number">01 / MECHANISM</span><span class="tag chosen">Chosen layout</span></div><h3>Split-face assembly</h3><p>The two loops occupy different depth layers. Inspect the drive, links and wing panels in the nominally passing 3 mm package.</p><span class="open">Open mechanical 3D view ↗</span></a>
-<a class="card" href="single_face_3d.html"><div class="card-top"><span class="number">02 / PACKAGING</span><span class="tag warning">Known interference</span></div><h3>Same-face assembly</h3><p>Both crank arms share one face. Compare the compact arrangement and its unresolved coupler-to-pin collision.</p><span class="open">Open experimental 3D view ↗</span></a>
-<a class="card" href="direct_2d.html"><div class="card-top"><span class="number">03 / KINEMATICS</span><span class="tag">Planar diagram</span></div><h3>The six-bar, explained</h3><p>Follow the named joints, highlight each loop and compare actual wing motion with the desired pose.</p><span class="open">Open 2D linkage view ↗</span></a>
-<a class="card" href="bat_3d.html"><div class="card-top"><span class="number">04 / APPEARANCE</span><span class="tag">Cosmetic study</span></div><h3>Bring the bat to life</h3><p>The same solved motion with dark wing panels and a playful bat silhouette. The decorative body is not clearance-validated.</p><span class="open">Open bat 3D view ↗</span></a>
-</div></section>
-<section class="evidence" aria-labelledby="evidence"><div><h2 id="evidence">Behind the movement</h2><p>Target versus actual motion, full-cycle transmission angles and a local optimization loss map.</p></div><a href="diagnostics/index.html">Explore the evidence →</a></section>
-<div class="notes"><section><h2>Reading the model</h2><p>These are calculated rigid-link animations, not a flight or flexible-material simulation. Nominal checks use 3 mm stock; 6.35 mm plywood, actual actuator capacity and loaded operation remain unverified.</p></section><details><summary>How this demo is updated</summary><p>This site serves committed animation files. Hosting does not run Python or optimization. To regenerate locally, run <code>python3 run_all.py demo</code>, then commit and push the updated <code>outputs/</code> files.</p><p>Drag to orbit in 3D, scroll to zoom, and use the playback controls to inspect individual poses. The 2D view includes an optional target overlay.</p></details></div>
-</main><footer><span>Batwing · Stephenson six-bar mechanism</span><span>One saved solution. Four ways to see it.</span></footer>
+<body><main>
+<header><h1>RMD / Stephenson six-bar</h1><span>Saved design · dimensions in mm</span></header>
+<h2>Animations</h2>
+<nav class="views" aria-label="Animation views">
+<a class="view" href="direct_3d.html"><strong>Split-face 3D ↗</strong><small class="pass">CHOSEN · NOMINAL PASS</small></a>
+<a class="view" href="single_face_3d.html"><strong>Same-face 3D ↗</strong><small class="fail">EXPERIMENT · COLLISION</small></a>
+<a class="view" href="direct_2d.html"><strong>Six-bar 2D ↗</strong><small>JOINTS / LOOPS / TARGETS</small></a>
+<a class="view" href="bat_3d.html"><strong>Bat 3D ↗</strong><small>APPEARANCE STUDY</small></a>
+</nav>
+<div class="toolbar"><h2>Analysis &amp; results</h2><a href="diagnostics/index.html">All plots ↗</a></div>
+<table><thead><tr><th scope="col">Result</th><th scope="col">View / download</th></tr></thead><tbody>
+<tr><td>Motion &amp; transmission angles</td><td><a href="diagnostics/motion_and_transmission.png">Plot</a> · <a href="diagnostics/motion_dense.csv" download>CSV</a></td></tr>
+<tr><td>Local loss landscape</td><td><a href="diagnostics/loss_landscape.png">Plot</a></td></tr>
+<tr><td>Link lengths &amp; phases</td><td><a href="direct/dimensions.json">JSON</a></td></tr>
+<tr><td>Computed values &amp; code references</td><td><a href="diagnostics/numbers.json">JSON</a> · <a href="diagnostics/numbers.md">Notes</a></td></tr>
+
+
+</tbody></table>
+<div class="command"><span class="muted">Regenerate locally</span><code id="command">python3 run_all.py demo</code><button id="copy" type="button">Copy command</button><span id="copy-status" role="status" aria-live="polite"></span></div>
+
+</main>
+<script>
+document.getElementById('copy').onclick=async()=>{
+ const status=document.getElementById('copy-status');
+ try{await navigator.clipboard.writeText(document.getElementById('command').textContent);status.textContent='Copied';}
+ catch{status.textContent='Select and copy the command above.';}
+};
+</script>
 </body></html>

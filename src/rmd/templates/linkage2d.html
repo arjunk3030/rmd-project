@@ -2,18 +2,18 @@
 <style>body{font:16px system-ui;background:#f3f5f8;color:#172436;max-width:1200px;margin:24px auto;padding:0 20px}h1{font-size:26px}h2{font-size:18px}main{display:grid;grid-template-columns:2fr 1fr;gap:16px}section{background:white;border:1px solid #d5dfeb;border-radius:12px;padding:16px}svg{width:100%;height:360px}button,select{padding:8px;font:inherit}nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:20px 0}input[type=range]{flex:1}li{margin:8px 0}.note{color:#52637a;font-size:14px}a{color:#245db1}#readout{font-variant-numeric:tabular-nums}@media(max-width:750px){main{grid-template-columns:1fr}}</style>
 <nav><a href="index.html">All demos</a> · <a href="diagnostics/index.html">Evidence plots</a></nav>
 <h1>One wing: a Stephenson six-bar</h1>
-<p>Dashed gray wing: desired pose. Colored links: actual motion. Two triangles show <b>rigid three-joint links</b>. They are diagrams of connected parts, not extra plates to manufacture.</p>
+
 <nav><button id="play">Pause</button><input aria-label="Crank angle" id="scrub" type="range" min="0" value="0"><label><input id="targets" type="checkbox" checked> Target wing pose</label><label><input id="triangles" type="checkbox" checked> Shade rigid triangles</label><select id="loop" aria-label="Highlight loop"><option value="all">All six links</option><option value="shoulder">Shoulder loop O–A–B–S–O</option><option value="elbow">Elbow loop O–D–Q–E–S–O</option></select></nav>
 <main><section><h2>Complete right wing</h2><svg id="full" role="img" aria-label="Animated six-bar mechanism"></svg></section><section><h2>Enlarged shoulder and crank</h2><svg id="detail" role="img" aria-label="Close-up of the shared crank and inner wing"></svg></section></main>
 <p id="readout"></p>
-<main><section><h2>Count rigid bodies, not separate wooden pieces</h2><ol>
+<main><section><h2>Count rigid bodies, not separate wooden pieces</h2><p class="note"><span style="display:inline-block;width:28px;border-top:2px dashed #758397;vertical-align:middle;margin-right:6px"></span>Dark gray dashed: target wing position<br><span style="display:inline-block;width:28px;border-top:3px solid #b8c3cf;vertical-align:middle;margin-right:6px"></span>Light gray solid (ending at T): actual wing position</p><ol>
 <li><b style="color:#9faab6">Frame O–S:</b> the only stationary link.</li>
 <li><b style="color:#438bff">Crank O–A–D:</b> blue shoulder arm and orange elbow arm locked to one shaft; one moving link. The blue triangle groups them.</li>
 <li><b style="color:#438bff">Shoulder coupler A–B (blue).</b></li>
 <li><b style="color:#17becf">Inner wing S–B–E:</b> rocker and inner spar rigidly connected; one moving link.</li>
 <li><b style="color:#ff8c1a">Elbow coupler D–Q.</b></li>
 <li><b style="color:#ef5959">Outer wing E–Q–T:</b> red output lever and pale outer spar rigidly connected. T is the wingtip, not a joint.</li></ol></section>
-<section><h2>Why Stephenson?</h2><p>The three-joint links <b>O–A–D</b> and <b>S–B–E</b> do not share a joint. They connect through other links. In a Watt chain, the two three-joint links share a joint directly.</p><p><b>There is no fixed triangular link here.</b> O and S are fixed points, but their attached triangles rotate about them.</p><p class="note">This is a flat projection of the saved mechanism: depth layers are collapsed, so crossing lines are not necessarily collisions. Same dimensions, phases and motion as the 3D model. The triangle edges A–D and B–E represent rigid relationships, not added rods.</p><a href="direct_3d.html">Mechanical 3D view</a> · <a href="bat_3d.html">Bat appearance</a></section></main>
+<section><h2>Why Stephenson?</h2><p>The three-joint links <b>O–A–D</b> and <b>S–B–E</b> do not share a joint. They connect through other links. In a Watt chain, the two three-joint links share a joint directly.</p><p><b>There is no fixed triangular link here.</b> O and S are fixed points, but their attached triangles rotate about them.</p></section></main>
 <script>
 const POSES=__POSES__;
 const $=id=>document.getElementById(id);let frame=0,playing=true,last=null;

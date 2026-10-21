@@ -52,7 +52,7 @@ def build(kind,*,refit=False,video=False,validate_only=False,allow_fit=True):
         params,ba,be,packet=get_direct(refit,allow_fit)
         def simulation(theta):return geometry_fn(theta)['simulation']
         def geometry_fn(theta):return direct.geometry(params,ba,be,theta)
-        desc='Small plywood body: both cranks share each short O shaft. A moves the shoulder; B drives the elbow directly. One remote actuator in the stand drives a timing belt; a small gear pair reverses the other wing. No motor inside the bat body.'
+        desc=''
         placement=lambda p,side:compact.transform(p,side,cfg)+np.array([cfg['wing_plane_x_mm']+(cfg.get('left_layer_spread_mm',0) if side=='L' else 0),0,0])
     theta=np.linspace(0,2*np.pi,cfg['audit_samples'],endpoint=False)
     geom=geometry_fn(theta);sim=geom.get('simulation')
