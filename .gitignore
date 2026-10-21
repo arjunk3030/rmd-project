@@ -32,3 +32,6 @@ outputs/videos/
 
 # Keep final HTML demos, canonical dimensions, config and validation tracked.
 # Do not ignore all of outputs/: the frozen demo requires saved JSON results.
+
+# Local Vercel project credentials/settings
+.vercel/

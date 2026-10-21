@@ -197,3 +197,18 @@ FFmpeg must be installed separately and available on PATH for MP4 export. Node.j
 ### How the animations are implemented
 
 The HTML/JavaScript templates are custom code in `src/rmd/templates/`, populated with solved Python motion data. HTML organizes the page and controls. JavaScript updates the drawing each frame. Canvas is a standard browser drawing API, not a separate installed animation application: our code projects 3D points onto the 2D canvas and draws the links and panels. The planar view uses SVG, another browser graphics format. These are standard web technologies; the mechanism renderer is custom, rather than a CAD or physics engine. MP4 exports use Matplotlib and FFmpeg.
+
+## Hosting the committed demo on Vercel
+
+`vercel.json` serves **only the committed `outputs/` directory** as a static website. Its install and build commands are empty, and the framework preset is Other. Deployment never generates animations, installs Python dependencies or runs optimization.
+
+1. Push this repository, including `outputs/`, to your Git provider.
+2. Import that repository into Vercel. Use the repository root as Root Directory.
+3. Keep Framework Preset **Other**, Output Directory **outputs**, and the install/build commands empty as configured in `vercel.json`.
+4. Deploy. Vercel serves `outputs/index.html` at the site root. Connected Git pushes redeploy the committed site; edits on your computer alone do not update it.
+
+To publish a visualization update, explicitly run `python3 run_all.py demo` locally, inspect `outputs/index.html`, then commit and push the changed outputs. To change the landing page, edit `src/rmd/templates/index.html` and regenerate; the generated `outputs/index.html` must also be committed. Other commits can trigger a deployment, but the visualizations remain identical unless their committed files change. Redesign experiments are not published automatically.
+
+There are no server functions, secrets or external browser dependencies. The hosted landing page links only to files inside `outputs/`; local README/video-directory links have been removed. The entire committed output directory is public, including numerical evidence and reference geometry. Large MP4 exports are ignored by Git and are not linked from the hosted page. `.vercel/` is ignored for local Vercel settings. This setup prepares deployment; it does not create a Vercel project or publish a live URL.
+
+Reference: [Vercel build configuration](https://vercel.com/docs/builds/configure-a-build) and [vercel.json configuration](https://vercel.com/docs/project-configuration/vercel-json).
