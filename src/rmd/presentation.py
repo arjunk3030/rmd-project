@@ -11,7 +11,7 @@ def write_index():
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',nargs='?',default='demo',choices=['demo','validate','diagnostics','video','all','direct','render','init-redesign','redesign'])
+    parser.add_argument('command',nargs='?',default='demo',choices=['demo','validate','diagnostics','video','all','direct','render','init-redesign','redesign','mockup','mockup-offset','split-direct'])
     parser.add_argument('name',nargs='?',help='Experiment name for init-redesign/redesign')
     parser.add_argument('--no-video',action='store_true',help='Compatibility flag; demo never encodes videos unless requested.')
     parser.add_argument('--view',default='all',choices=['all','direct','single_face','bat','2d'],help='Video selection')
@@ -25,12 +25,23 @@ def main(argv=None):
         finally:verify()
         return
     if args.name:parser.error('Only redesign commands accept an experiment name.')
+    if args.command=='split-direct':
+        from .split_direct import build as split_direct
+        split_direct();write_index();verify();return
+    if args.command in ('mockup','mockup-offset'):
+        from .mockup import build as mockup
+        mockup(offset=args.command=='mockup-offset');write_index();verify();return
     if args.command in ('demo','all','direct','render'):
         from .designs import build
         from .single_face import build as single_face
         result=build('direct',video=False,allow_fit=False)
         if not result['nominal_prototype_passes']:raise ValueError('Original direct package failed validation.')
         single_face()
+        from .mockup import build as mockup
+        mockup()
+        mockup(offset=True)
+        from .split_direct import build as split_direct
+        split_direct()
     elif args.command=='validate':
         from .designs import build
         from .single_face import build as single_face

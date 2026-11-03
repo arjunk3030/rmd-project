@@ -1,0 +1,9 @@
+# One-wing mock-up
+
+One right wing, directly driven at O. No opposite wing, gears, belt, fabric or fabric ribs. Yellow: solid inner-wing triangle and outer spar. Blue: remaining printed linkage bodies. Red, when enabled: shoulder coupler A–B. All screws, including D, are gray. Show collision pauses at 285 degrees (nearest displayed frame to the original audit's 283.5-degree worst case). Highlight identifies the pair, not a live collision sensor.
+
+Same frozen pivot distances, phases and motion. The crank triangle and inner-wing triangle are rigid moving links, not stationary plates. Printed seats now have through-bores rather than rings drawn over solid material. The outer-wing lever and spar share their own depth plane, separated from the inner-wing triangle. Their common material is one rigid printed body. Bearing/screw/nut envelopes remain illustrative; the actuator box is a placeholder, not a selected motor. The motor front was moved to x = −4 mm and the support center to x = −6 mm, shortening the axial gap. Motor fit and loaded performance remain unverified. See motor_support_check.json for the limited support screen; the printed shapes have not received a complete clearance or load audit.
+
+The original same-face A–B/D conflict exists within one wing, so removing the other wing does not fix it. Tested coupler-layer swaps remove that pair but create elbow-coupler collisions with A/B pins or the input shaft. See layer_checks.json for the limited 1440-pose link/pin screen. It is not a printed-triangle audit or a proof that no other layout exists. No tested alternative is adopted here.
+
+Keeping the planar kinematics may still be possible with a specially routed offset coupler or different shaft supports. Merely swapping spacers is not a demonstrated solution. Bearing retention, inner-race spacers, screw lengths and print tolerances remain to be designed. Nuts should clamp inner races/spacers, not squeeze rotating printed faces.

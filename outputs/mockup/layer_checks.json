@@ -1,0 +1,120 @@
+{
+  "scope": "Limited original 3 mm link/pin envelopes for one wing; excludes printed triangle interiors, bosses, hubs, frame and actuator. Negative gap means overlap. Not a full mock-up audit.",
+  "samples": 1440,
+  "required_gap_mm": 1,
+  "results": [
+    {
+      "shoulder_coupler_plane_mm": -37,
+      "elbow_coupler_plane_mm": -46,
+      "conflicts": [
+        {
+          "parts": [
+            "R/coupler1",
+            "R/pin_D"
+          ],
+          "gap_mm": -5.5
+        }
+      ]
+    },
+    {
+      "shoulder_coupler_plane_mm": -52,
+      "elbow_coupler_plane_mm": -37,
+      "conflicts": [
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_A"
+          ],
+          "gap_mm": -5.48
+        },
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_B"
+          ],
+          "gap_mm": -5.49
+        }
+      ]
+    },
+    {
+      "shoulder_coupler_plane_mm": -58,
+      "elbow_coupler_plane_mm": -46,
+      "conflicts": [
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_A"
+          ],
+          "gap_mm": -5.48
+        },
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_B"
+          ],
+          "gap_mm": -5.49
+        }
+      ]
+    },
+    {
+      "shoulder_coupler_plane_mm": -46,
+      "elbow_coupler_plane_mm": -37,
+      "conflicts": [
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_A"
+          ],
+          "gap_mm": -5.48
+        },
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_B"
+          ],
+          "gap_mm": -5.49
+        }
+      ]
+    },
+    {
+      "shoulder_coupler_plane_mm": -37,
+      "elbow_coupler_plane_mm": -23,
+      "conflicts": [
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_B"
+          ],
+          "gap_mm": -5.49
+        },
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/motor_shaft"
+          ],
+          "gap_mm": -5.47
+        }
+      ]
+    },
+    {
+      "shoulder_coupler_plane_mm": -46,
+      "elbow_coupler_plane_mm": -23,
+      "conflicts": [
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/pin_B"
+          ],
+          "gap_mm": -5.49
+        },
+        {
+          "parts": [
+            "R/rod2_direct",
+            "R/motor_shaft"
+          ],
+          "gap_mm": -5.47
+        }
+      ]
+    }
+  ]
+}

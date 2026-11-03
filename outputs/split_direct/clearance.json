@@ -1,0 +1,20 @@
+{
+  "status": "UNVERIFIED",
+  "scope": "Limited 1440-pose envelope screen, not a full solid/hardware/motor audit.",
+  "D_screw_to_AB_axial_gap_mm": 39.5,
+  "A_hardware_to_inner_triangle_conservative_gap_mm": 3.1863814671066035,
+  "motor_envelope_diameter_mm": 14,
+  "motor_envelope_length_mm": 5,
+  "motor_to_elbow_coupler_axial_gap_mm": 1.0,
+  "inner_D_trial": {
+    "status": "FAIL",
+    "scope": "At the zero-angle pose, placing D on the A crank plane while keeping the elbow coupler outside requires the D pin to cross both support plates.",
+    "input_angle_deg": 0,
+    "D_to_O_mm": 12.341103362423812,
+    "D_to_S_mm": 16.085398640459903
+  },
+  "limitations": [
+    "The 14 \u00d7 5 mm motor is an unselected envelope, not a verified actuator.",
+    "No full moving-solid, joint-fit, support, bearing or torque validation."
+  ]
+}

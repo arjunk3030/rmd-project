@@ -1,0 +1,37 @@
+{
+  "status": "FAIL",
+  "bridge_offset_mm": 20,
+  "step_from_joint_mm": 9.5,
+  "samples": 1440,
+  "explanation": "The 8 mm wide bridge legs cross the elbow coupler; the end sections also cross the D screw. This is a limited sampled screen, not a complete collision audit.",
+  "results": [
+    {
+      "bridge_leg": "A",
+      "min_centerline_distance_mm": 0.013641676994759317,
+      "input_angle_deg": 103.5,
+      "combined_half_width_mm": 8.0,
+      "intersects": true
+    },
+    {
+      "bridge_leg": "B",
+      "min_centerline_distance_mm": 0.000535939646261159,
+      "input_angle_deg": 285.0,
+      "combined_half_width_mm": 8.0,
+      "intersects": true
+    },
+    {
+      "front_section": "A",
+      "min_centerline_distance_mm": 0.7314672256296831,
+      "input_angle_deg": 283.5,
+      "combined_half_width_mm": 5.5,
+      "intersects": true
+    },
+    {
+      "front_section": "B",
+      "min_centerline_distance_mm": 0.8422613868863312,
+      "input_angle_deg": 283.5,
+      "combined_half_width_mm": 5.5,
+      "intersects": true
+    }
+  ]
+}

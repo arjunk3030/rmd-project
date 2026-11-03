@@ -1,0 +1,17 @@
+{
+  "plate_thickness_mm": 4,
+  "link_width_mm": 8,
+  "bearing_outer_diameter_mm": 10,
+  "bearing_bore_mm": 3,
+  "bearing_width_mm": 4,
+  "screw_diameter_mm": 3,
+  "head_diameter_mm": 5.5,
+  "nut_across_flats_mm": 5.5,
+  "nut_thickness_mm": 2.4,
+  "boss_wall_mm": 2,
+  "note": "Illustrative print/hardware dimensions, not selected parts or toleranced CAD. Same-face positions and frozen motion retained; original interference remains unresolved.",
+  "support_plane_x_mm": -6,
+  "motor_front_x_mm": -4,
+  "motor_length_mm": 36,
+  "motor_face_mm": 20
+}

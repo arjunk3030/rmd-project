@@ -1,0 +1,14 @@
+{
+  "samples": 1440,
+  "plate_x_interval_mm": [
+    -8,
+    -4
+  ],
+  "motor_front_x_mm": -4,
+  "outer_print_to_plate_axial_gap_mm": 1.5,
+  "E_Q_nut_to_plate_conservative_gaps_mm": {
+    "E": 75.84098047701241,
+    "Q": 70.80084417701211
+  },
+  "scope": "Moving plate envelope and E/Q nut to support plate only; does not validate all parts, shaft fits, hardware, motor mounting, strength, or the known A\u2013B/D collision."
+}

@@ -97,3 +97,23 @@ node tests/check_viewer.cjs
 ```
 
 Node.js is only needed for viewer tests. No npm packages are required.
+
+
+## Printed mock-up
+
+```bash
+python3 run_all.py mockup
+open outputs/mockup_3d.html
+```
+
+A separate single-wing, same-face view with solid printed triangles, bare yellow wing spars and bearing/screw/nut joints. Both blue triangles O–A–D and S–B–E rotate as rigid bodies; only O and S are grounded. Toggle hardware visibility to inspect the print shapes. Existing demos and synthesized dimensions are preserved. `demo` also regenerates this view.
+
+Appearance dimensions are in `config/presentation/mockup.json`: initially 4 mm plates, 10 × 3 × 4 mm bearing envelopes and 3 mm screws. These are placeholders, not selected hardware or print-ready CAD. The previous same-face collision remains unresolved, and new solids/bosses have not been clearance-checked. See `outputs/mockup/build_notes.md` for joint assembly assumptions.
+
+The mock-up now shows one directly driven wing: yellow wing spars, blue printed links, and a red A–B/D conflict highlight. **Show collision** pauses near the problematic pose. `outputs/mockup/layer_checks.json` records tested depth swaps; none is adopted as a validated fix. These limited checks use the old link/pin envelopes, not a complete audit of the new prints.
+
+
+The offset-link trial is `outputs/offset_experiment_3d.html`; regenerate it with `python3 run_all.py mockup-offset`. The trial fails its limited clearance check: the bridge intersects the elbow coupler and D screw. Results are in `outputs/offset_experiment/clearance.json`.
+
+
+One-wing split-face direct-drive concept: `open outputs/split_direct_3d.html`; regenerate using `python3 run_all.py split-direct`. The visual uses a 14 × 5 mm motor envelope only to show one possible packaging volume; no motor has been selected or qualified. See `outputs/split_direct/clearance.json` for the limited checks and unresolved issues.
