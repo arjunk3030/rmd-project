@@ -11,7 +11,7 @@ def write_index():
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',nargs='?',default='demo',choices=['demo','validate','diagnostics','video','all','direct','render','init-redesign','redesign','mockup','mockup-offset','split-direct'])
+    parser.add_argument('command',nargs='?',default='demo',choices=['demo','validate','diagnostics','video','all','direct','render','init-redesign','redesign','mockup','mockup-offset','split-direct','top-drive'])
     parser.add_argument('name',nargs='?',help='Experiment name for init-redesign/redesign')
     parser.add_argument('--no-video',action='store_true',help='Compatibility flag; demo never encodes videos unless requested.')
     parser.add_argument('--view',default='all',choices=['all','direct','single_face','bat','2d'],help='Video selection')
@@ -25,6 +25,17 @@ def main(argv=None):
         finally:verify()
         return
     if args.name:parser.error('Only redesign commands accept an experiment name.')
+    if args.command=='top-drive':
+        import re
+        from .build_viewer import write_viewer
+        from .top_drive_check import save_reports
+        for name in ('direct_3d.html','single_face_3d.html'):
+            path=OUTPUT_DIR/name
+            match=re.search(r'const DATA=(.*),META=(.*),DIMS=(.*),AUDIT=(.*);\n',path.read_text())
+            if not match:raise ValueError(f'Missing saved data in {path}; run demo first.')
+            frames,meta,dims,audit=map(json.loads,match.groups())
+            write_viewer(frames,meta,dims,audit,path,generate_related=False)
+        save_reports();write_index();verify();return
     if args.command=='split-direct':
         from .split_direct import build as split_direct
         split_direct();write_index();verify();return
@@ -42,6 +53,8 @@ def main(argv=None):
         mockup(offset=True)
         from .split_direct import build as split_direct
         split_direct()
+        from .top_drive_check import save_reports
+        save_reports()
     elif args.command=='validate':
         from .designs import build
         from .single_face import build as single_face

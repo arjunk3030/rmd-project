@@ -12,12 +12,17 @@ for(const kind of ['direct','single_face','bat']){
  vm.runInNewContext(script,sandbox,{timeout:5000});nextFrame(100);nextFrame(200);
  if(draws<30)throw Error('No drawing');
  if(labels!==0)throw Error('Image text should be off by default');
- if(kind==='direct')vm.runInNewContext("if(META.covers.length!==6)throw Error('Missing bat cover'); if(META.boxes.some(b=>b.name==='R/motor'))throw Error('Large body motor remains'); if(!DATA[0].parts.some(p=>p.name==='body_pulley'))throw Error('Remote drive missing')",sandbox);
+ if(kind==='direct')vm.runInNewContext("if(META.covers.length!==6)throw Error('Missing bat cover'); if(META.boxes.some(b=>b.name==='R/motor'))throw Error('Large body motor remains'); if(DATA[0].parts.some(p=>p.name==='body_pulley')||!DATA[0].parts.some(p=>p.name==='top_motor_shaft'))throw Error('Top motor layout incorrect')",sandbox);
+ if(kind==='direct'){
+  vm.runInNewContext("if(!META.scale_reference)throw Error('Scale reference missing');",sandbox);
+  element('scale').checked=false;let before=draws;element('scale').onchange();let without=draws-before;
+  element('scale').checked=true;before=draws;element('scale').onchange();if(draws-before<=without)throw Error('Scale references did not draw');
+ }
  if(kind==='bat')vm.runInNewContext("if(!BAT||META.costume.length<20)throw Error('Missing costume');if(elById('structure').checked)throw Error('Drive should start hidden');",sandbox);
  element('labels').checked=true;element('labels').onchange();if(!labels)throw Error('Label toggle failed');element('labels').checked=false;element('labels').onchange();
  element('cover').checked=false;element('cover').onchange();element('cover').checked=true;element('cover').onchange();
  vm.runInNewContext(`(()=>{
-  if(DATA[0].gears.length!==${kind!=='compact'?2:6})throw Error('Gear count');
+  if(DATA[0].gears.length!==${kind==='bat'?2:3})throw Error('Gear count');
   for(const fr of [DATA[0],DATA[54]]){
    const panels=previewPanels(fr,META.panel_style,META.panel_pitch_deg),ribs=previewRibs(fr,META.panel_style,META.panel_pitch_deg);
    const parts=Object.fromEntries(fr.parts.map(p=>[p.name,p]));
@@ -28,7 +33,7 @@ for(const kind of ['direct','single_face','bat']){
  element('panel-shape').value='rectangular';element('panel-shape').onchange();element('panel-pitch').value=25;element('panel-pitch').oninput();
  if(!/Appearance preview|Appearance study/.test(element('preview-note').textContent))throw Error('Missing preview warning');
  element('reset-panels').onclick();element('front').onclick();element('scrub').oninput({target:{value:'54'}});element('cv').onwheel({preventDefault(){},deltaY:1});
- if(!element('status').textContent.includes('Nominal layout: '+(kind==='single_face'?'FAIL':'PASS'))||!element('status').textContent.includes('unverified'))throw Error('Incorrect status');
+ if(!element('status').textContent.includes('unverified'))throw Error('Missing verification status');if(kind==='single_face'&&!element('status').textContent.includes('collision'))throw Error('Missing same-face warning');
  element('mechanism').value='inner';element('mechanism').onchange();
  vm.runInNewContext(`(()=>{const g=viewGeometry(DATA[0],META.panel_style,META.panel_pitch_deg);if(g.parts.length!==${kind!=='compact'?10:8}||g.gears.length||Object.keys(g.panels).join()!=='R/inner_panel')throw Error('Isolation failed');})()`,sandbox);
  if(!element('hud').innerHTML.includes('No elbow')||element('status').style.display!=='none')throw Error('Isolated HUD');

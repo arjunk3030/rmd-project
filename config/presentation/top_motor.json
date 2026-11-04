@@ -1,0 +1,12 @@
+{
+  "motor_pinion_teeth": 18,
+  "angle_above_right_gear_deg": 100,
+  "center_distance_mm": 26.15,
+  "gear_face_width_mm": 3,
+  "shaft_diameter_mm": 3,
+  "motor_front_x_mm": 34,
+  "motor_length_mm": 40,
+  "motor_face_mm": 20,
+  "note": "Illustrative 18T drive gear meshes with the original 34T gear; guessed motor envelope, supports and hub design not finalized.",
+  "support_bearing_diameter_mm": 10
+}

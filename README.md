@@ -15,6 +15,8 @@ open outputs/index.html
 | 2D linkage with target overlay | `direct_2d.html` |
 | Bat appearance | `bat_3d.html` |
 
+The split-face 3D view has a toggle for approximate scale references: a 150 × 72 × 8 mm phone and a stylized hand approximately 180 mm long.
+
 The same-face package has a known collision. The chosen package passes nominal checks for **3 mm stock**; 6.35 mm plywood and actual actuator sizing remain unverified.
 
 ## Setup and generate
@@ -117,3 +119,6 @@ The offset-link trial is `outputs/offset_experiment_3d.html`; regenerate it with
 
 
 One-wing split-face direct-drive concept: `open outputs/split_direct_3d.html`; regenerate using `python3 run_all.py split-direct`. The visual uses a 14 × 5 mm motor envelope only to show one possible packaging volume; no motor has been selected or qualified. See `outputs/split_direct/clearance.json` for the limited checks and unresolved issues.
+
+
+The full two-wing split-face and same-face views show a top-mounted motor driving the right wing gear through an 18-tooth pinion. The two 34-tooth wing gears remain, so the external motor-to-wing ratio is 34:18 ≈ 1.89:1. `python3 run_all.py top-drive` regenerates those two views and the limited checks. The motor envelope, long shaft, bracket, printed gear strength and fits are not validated; the same-face linkage collision remains. The separate one-wing mock-up remains gearless.

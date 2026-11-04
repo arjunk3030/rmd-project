@@ -1,0 +1,19 @@
+{
+  "layout": "same",
+  "samples": 720,
+  "new_motor_center_mm": [
+    -4.0,
+    12.459100154009773,
+    -1.0800929887282393
+  ],
+  "motor_pinion_teeth": 18,
+  "wing_gear_teeth": 34,
+  "input_reduction": 1.8888888888888888,
+  "rear_support_hole_diameter_mm": 10.0,
+  "rear_support_min_existing_hole_web_mm": 4.537325760917512,
+  "rear_support_min_edge_web_mm": 4.080092988728239,
+  "detected_drive_conflicts": [],
+  "sampled_gear_vertex_penetrations": 0,
+  "scope": "Preliminary envelope check of the new motor pinion, shaft and assumed box against modeled moving links and panels. Polygon vertex sampling is not a tooth-strength, fit or exact mesh test. Rear support plate requires a new bearing hole. Motor bracket, retention, tolerances, wiring, loaded behavior and gear stresses are not checked. Original same-face A\u2013B/D collision is unchanged.",
+  "build_ready": false
+}
