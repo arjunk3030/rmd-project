@@ -1,15 +1,15 @@
 {
   "parameters": [
-    11.816197190452613,
-    20.57371985692415,
-    24.77533813002786,
+    14.770246488065766,
+    25.71714982115519,
+    30.969172662534824,
     -1.1742272158332396,
     0.20910086852814305,
-    12.341103362423812,
+    15.426379203029764,
     1.082778310318743,
-    21.069630838455993,
+    26.33703854806999,
     2.349847416417362,
-    114.46756177417743
+    143.08445221772178
   ],
   "branchA": 1,
   "branchE": -1,
@@ -27,9 +27,9 @@
     "rod"
   ],
   "units": "length mm; angles radians",
-  "provenance": "Fresh joint synthesis for small body. User prioritized transmission >=40 degrees over exact shoulder/fold targets.",
-  "method": "Joint constrained synthesis using bounded least squares and SLSQP with explicit small ground, 100/150 mm wing segments, user-proposed motion targets, and minimum 40 degree transmission acceptance. Warm start from staged shoulder/rod fitting; independent physical-envelope validation follows.",
-  "input_digest": "3f51973efce48a7d0b344d4b8a4498b29c863830bb1159af56d672cdb10e9d59",
+  "provenance": "Numerically synthesized outputs, not measured dimensions. Uniformly scaled x1.25 on 2026-11-17 at Arjun's direction (all link lengths, ground and wing segments; angles, phases, branches and motion unchanged), matching the printed CAD parts.",
+  "method": "Joint constrained synthesis using bounded least squares and SLSQP with explicit small ground, 125/187.5 mm wing segments (x1.25 scale-up of the 100/150 mm synthesis), user-proposed motion targets, and minimum 40 degree transmission acceptance. Warm start from staged shoulder/rod fitting; independent physical-envelope validation follows.",
+  "input_digest": "34da216fa62aab88e65430b1ed7b6a93cd066ae7eaf84b514a9d30a005e5250e",
   "inputs": {
     "common": {
       "layout": {
@@ -258,8 +258,8 @@
     },
     "layout": {
       "name": "Small-body direct six-bar",
-      "provenance": "Editable small-body requirements: 28 mm O-S ground, 50 mm shoulder spacing, 34 mm input shaft spacing. Remote actuator in stand; belt drives right O and 34T gears reverse left O. Fits and loads unverified.",
-      "shoulder_spacing_mm": 50,
+      "provenance": "Editable small-body requirements: 35 mm O-S ground, 54 mm shoulder spacing, 34 mm input shaft spacing. Uniform x1.25 scale-up of the frozen Nov 4 design (Nov 17, 2026): every link length, the ground and both wing segments x1.25; angles, phases and motion unchanged; shoulder spacing 50 -> 54 mm so the 34 mm gear mesh stays exact. Remote actuator in stand; belt drives right O and 34T gears reverse left O. Fits and loads unverified.",
+      "shoulder_spacing_mm": 54,
       "left_axial_offset_mm": 0,
       "gear": {
         "module_mm": 1,
@@ -289,7 +289,7 @@
       "base_center_mm": [
         15,
         0,
-        -156
+        -159
       ],
       "base_size_mm": [
         100,
@@ -309,28 +309,28 @@
         "rod"
       ],
       "lower_bounds": [
-        8.5,
-        10,
-        12,
+        10.625,
+        12.5,
+        15.0,
         -3.141592653589793,
         -3.141592653589793,
-        8.5,
+        10.625,
         -3.141592653589793,
-        8.5,
+        10.625,
         -3.141592653589793,
-        75
+        93.75
       ],
       "upper_bounds": [
-        12.4,
-        40,
-        36,
+        15.5,
+        50.0,
+        45.0,
         3.141592653589793,
         3.141592653589793,
-        13.7,
+        17.125,
         3.141592653589793,
-        36,
+        45.0,
         3.141592653589793,
-        145
+        181.25
       ],
       "fit_samples": 120,
       "polish_samples": 180,
@@ -343,7 +343,7 @@
       "downstroke_fold_polish_max_deg": 50,
       "reference_shoulder_weight": 1,
       "reference_fold_weight": 0.35,
-      "synthesis_method": "Joint constrained synthesis using bounded least squares and SLSQP with explicit small ground, 100/150 mm wing segments, user-proposed motion targets, and minimum 40 degree transmission acceptance. Warm start from staged shoulder/rod fitting; independent physical-envelope validation follows.",
+      "synthesis_method": "Joint constrained synthesis using bounded least squares and SLSQP with explicit small ground, 125/187.5 mm wing segments (x1.25 scale-up of the 100/150 mm synthesis), user-proposed motion targets, and minimum 40 degree transmission acceptance. Warm start from staged shoulder/rod fitting; independent physical-envelope validation follows.",
       "front_rocker_plane_x_mm": -22,
       "panel_direction": -1,
       "materials": {
@@ -358,169 +358,169 @@
         "enabled": true,
         "plane_x_mm": -38,
         "thickness_mm": 3,
-        "provenance": "Chosen compact bat face: 74 x 80 mm. Editable outline included in nominal clearance checks.",
+        "provenance": "Chosen compact bat face scaled x1.25: 92.5 x 100 mm. Editable outline included in nominal clearance checks.",
         "quads_yz_mm": [
           [
             [
-              -13.875,
-              10
+              -17.34375,
+              12.5
             ],
             [
-              13.875,
-              10
+              17.34375,
+              12.5
             ],
             [
-              26.59375,
-              -16
+              33.2421875,
+              -20.0
             ],
             [
-              -26.59375,
-              -16
+              -33.2421875,
+              -20.0
             ]
           ],
           [
             [
-              -26.59375,
-              -16
+              -33.2421875,
+              -20.0
             ],
             [
-              26.59375,
-              -16
+              33.2421875,
+              -20.0
             ],
             [
-              37.0,
-              -36
+              46.25,
+              -45.0
             ],
             [
-              -37.0,
-              -36
+              -46.25,
+              -45.0
             ]
           ],
           [
             [
-              -37.0,
-              -36
+              -46.25,
+              -45.0
             ],
             [
-              37.0,
-              -36
+              46.25,
+              -45.0
             ],
             [
-              20.8125,
-              -53
+              26.015625,
+              -66.25
             ],
             [
-              -20.8125,
-              -53
+              -26.015625,
+              -66.25
             ]
           ],
           [
             [
-              -20.8125,
-              -53
+              -26.015625,
+              -66.25
             ],
             [
-              20.8125,
-              -53
+              26.015625,
+              -66.25
             ],
             [
               0.0,
-              -58
+              -72.5
             ],
             [
               0.0,
-              -58
+              -72.5
             ]
           ],
           [
             [
-              -13.875,
-              10
+              -17.34375,
+              12.5
             ],
             [
-              -5.78125,
-              10
+              -7.2265625,
+              12.5
             ],
             [
-              -13.875,
-              22
+              -17.34375,
+              27.5
             ],
             [
-              -13.875,
-              22
+              -17.34375,
+              27.5
             ]
           ],
           [
             [
-              5.78125,
-              10
+              7.2265625,
+              12.5
             ],
             [
-              13.875,
-              10
+              17.34375,
+              12.5
             ],
             [
-              13.875,
-              22
+              17.34375,
+              27.5
             ],
             [
-              13.875,
-              22
+              17.34375,
+              27.5
             ]
           ]
         ],
         "outline_yz_mm": [
           [
-            -13.875,
-            22
+            -17.34375,
+            27.5
           ],
           [
-            -5.78125,
-            10
+            -7.2265625,
+            12.5
           ],
           [
-            5.78125,
-            10
+            7.2265625,
+            12.5
           ],
           [
-            13.875,
-            22
+            17.34375,
+            27.5
           ],
           [
-            13.875,
-            10
+            17.34375,
+            12.5
           ],
           [
-            26.59375,
-            -16
+            33.2421875,
+            -20.0
           ],
           [
-            37.0,
-            -36
+            46.25,
+            -45.0
           ],
           [
-            20.8125,
-            -53
+            26.015625,
+            -66.25
           ],
           [
             0.0,
-            -58
+            -72.5
           ],
           [
-            -20.8125,
-            -53
+            -26.015625,
+            -66.25
           ],
           [
-            -37.0,
-            -36
+            -46.25,
+            -45.0
           ],
           [
-            -26.59375,
-            -16
+            -33.2421875,
+            -20.0
           ],
           [
-            -13.875,
-            10
+            -17.34375,
+            12.5
           ]
         ]
       },
@@ -528,12 +528,12 @@
         "retained": "Short supported input shafts with front/rear crank arms; left rear links staggered 6 mm for clearance. Actuator removed from body; both loops re-synthesized.",
         "servo_status": "Single-output continuous actuator reserved in stand. Standard limited-angle servo cannot run the current full-rotation input."
       },
-      "ground_mm": 28,
+      "ground_mm": 35,
       "body_requirement": {
-        "max_width_mm": 76,
-        "max_height_mm": 80,
-        "max_depth_mm": 80,
-        "wing_length_each_mm": 250,
+        "max_width_mm": 95,
+        "max_height_mm": 100,
+        "max_depth_mm": 100,
+        "wing_length_each_mm": 312.5,
         "actuator_location": "stationary pedestal, outside the bat body",
         "provenance": "Chosen visual/packaging requirements, not measurements of a bat."
       },
@@ -552,8 +552,8 @@
       "peak_fold_polish_min_deg": 65,
       "peak_fold_polish_max_deg": 73,
       "wing_lengths_mm": {
-        "inner": 100,
-        "outer": 150
+        "inner": 125,
+        "outer": 187.5
       },
       "motion_targets": {
         "shoulder_min_deg": -30,
@@ -581,26 +581,26 @@
         ],
         "provenance": "User prioritizes transmission >=40 degrees and small body over exact proposed angles. Shoulder downstroke may reduce to -18 degrees; actual achieved extrema and target errors are reported."
       },
-      "panel_root_relief_mm": 20,
-      "panel_hinge_relief_mm": 10,
+      "panel_root_relief_mm": 25.0,
+      "panel_hinge_relief_mm": 12.5,
       "minimum_transmission_deg": 40
     },
     "seed": {
       "parameters": [
-        11.816197190452613,
-        20.57371985692415,
-        24.77533813002786,
+        14.770246488065766,
+        25.71714982115519,
+        30.969172662534824,
         -1.1742272158332396,
         0.20910086852814305,
-        12.341103362423812,
+        15.426379203029764,
         1.082778310318743,
-        21.069630838455993,
+        26.33703854806999,
         2.349847416417362,
-        114.46756177417743
+        143.08445221772178
       ],
       "branchA": 1,
       "branchE": -1,
-      "provenance": "Dense 1440-pose small-body synthesis with >=40 degree transmission priority."
+      "provenance": "Dense 1440-pose small-body synthesis with >=40 degree transmission priority. Scaled x1.25 with the design on 2026-11-17."
     },
     "reference": {
       "linkage1_crank_a1_mm": 16.412926542268618,
@@ -620,7 +620,7 @@
       "linkage2": 1
     },
     "algorithm": "284331e90e6518e08b52a7bbcd38e998adf6ac60a990f0edd6f8ea0498fb787e",
-    "package_algorithm": "a61528433a23b4bdfb84390b7bdfeb6a0defd3b418078b3842201c90c0eefb80",
+    "package_algorithm": "812559af0578ba6c6b3da35c2deb39a135cc298d6c6aaf68fc7ecace4ee8787b",
     "target_algorithm": "6c057a8ee6f16482fd21a7808a42b8b88fd4a740b13db34abae1ce1bf5fb1bef"
   }
 }

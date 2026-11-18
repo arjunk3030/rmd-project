@@ -1,7 +1,7 @@
 {
   "name": "Single-face Stephenson option",
   "provenance": "Experimental same-face repackaging; retains synthesized motion, known pin/rod interference. Not a fabrication design.",
-  "shoulder_spacing_mm": 50,
+  "shoulder_spacing_mm": 54,
   "left_axial_offset_mm": 0,
   "gear": {
     "module_mm": 1,
@@ -31,7 +31,7 @@
   "base_center_mm": [
     15,
     0,
-    -156
+    -159
   ],
   "base_size_mm": [
     100,
@@ -51,28 +51,28 @@
     "rod"
   ],
   "lower_bounds": [
-    8.5,
-    10,
-    12,
+    10.625,
+    12.5,
+    15.0,
     -3.141592653589793,
     -3.141592653589793,
-    8.5,
+    10.625,
     -3.141592653589793,
-    8.5,
+    10.625,
     -3.141592653589793,
-    75
+    93.75
   ],
   "upper_bounds": [
-    12.4,
-    40,
-    36,
+    15.5,
+    50.0,
+    45.0,
     3.141592653589793,
     3.141592653589793,
-    13.7,
+    17.125,
     3.141592653589793,
-    36,
+    45.0,
     3.141592653589793,
-    145
+    181.25
   ],
   "fit_samples": 120,
   "polish_samples": 180,
@@ -85,7 +85,7 @@
   "downstroke_fold_polish_max_deg": 50,
   "reference_shoulder_weight": 1,
   "reference_fold_weight": 0.35,
-  "synthesis_method": "Joint constrained synthesis using bounded least squares and SLSQP with explicit small ground, 100/150 mm wing segments, user-proposed motion targets, and minimum 40 degree transmission acceptance. Warm start from staged shoulder/rod fitting; independent physical-envelope validation follows.",
+  "synthesis_method": "Joint constrained synthesis using bounded least squares and SLSQP with explicit small ground, 125/187.5 mm wing segments (x1.25 scale-up of the 100/150 mm synthesis), user-proposed motion targets, and minimum 40 degree transmission acceptance. Warm start from staged shoulder/rod fitting; independent physical-envelope validation follows.",
   "front_rocker_plane_x_mm": -16,
   "panel_direction": 1,
   "materials": {
@@ -100,169 +100,169 @@
     "enabled": false,
     "plane_x_mm": -38,
     "thickness_mm": 3,
-    "provenance": "Chosen compact bat face: 74 x 80 mm. Editable outline included in nominal clearance checks.",
+    "provenance": "Chosen compact bat face scaled x1.25: 92.5 x 100 mm. Editable outline included in nominal clearance checks.",
     "quads_yz_mm": [
       [
         [
-          -13.875,
-          10
+          -17.34375,
+          12.5
         ],
         [
-          13.875,
-          10
+          17.34375,
+          12.5
         ],
         [
-          26.59375,
-          -16
+          33.2421875,
+          -20.0
         ],
         [
-          -26.59375,
-          -16
+          -33.2421875,
+          -20.0
         ]
       ],
       [
         [
-          -26.59375,
-          -16
+          -33.2421875,
+          -20.0
         ],
         [
-          26.59375,
-          -16
+          33.2421875,
+          -20.0
         ],
         [
-          37.0,
-          -36
+          46.25,
+          -45.0
         ],
         [
-          -37.0,
-          -36
+          -46.25,
+          -45.0
         ]
       ],
       [
         [
-          -37.0,
-          -36
+          -46.25,
+          -45.0
         ],
         [
-          37.0,
-          -36
+          46.25,
+          -45.0
         ],
         [
-          20.8125,
-          -53
+          26.015625,
+          -66.25
         ],
         [
-          -20.8125,
-          -53
+          -26.015625,
+          -66.25
         ]
       ],
       [
         [
-          -20.8125,
-          -53
+          -26.015625,
+          -66.25
         ],
         [
-          20.8125,
-          -53
+          26.015625,
+          -66.25
         ],
         [
           0.0,
-          -58
+          -72.5
         ],
         [
           0.0,
-          -58
+          -72.5
         ]
       ],
       [
         [
-          -13.875,
-          10
+          -17.34375,
+          12.5
         ],
         [
-          -5.78125,
-          10
+          -7.2265625,
+          12.5
         ],
         [
-          -13.875,
-          22
+          -17.34375,
+          27.5
         ],
         [
-          -13.875,
-          22
+          -17.34375,
+          27.5
         ]
       ],
       [
         [
-          5.78125,
-          10
+          7.2265625,
+          12.5
         ],
         [
-          13.875,
-          10
+          17.34375,
+          12.5
         ],
         [
-          13.875,
-          22
+          17.34375,
+          27.5
         ],
         [
-          13.875,
-          22
+          17.34375,
+          27.5
         ]
       ]
     ],
     "outline_yz_mm": [
       [
-        -13.875,
-        22
+        -17.34375,
+        27.5
       ],
       [
-        -5.78125,
-        10
+        -7.2265625,
+        12.5
       ],
       [
-        5.78125,
-        10
+        7.2265625,
+        12.5
       ],
       [
-        13.875,
-        22
+        17.34375,
+        27.5
       ],
       [
-        13.875,
-        10
+        17.34375,
+        12.5
       ],
       [
-        26.59375,
-        -16
+        33.2421875,
+        -20.0
       ],
       [
-        37.0,
-        -36
+        46.25,
+        -45.0
       ],
       [
-        20.8125,
-        -53
+        26.015625,
+        -66.25
       ],
       [
         0.0,
-        -58
+        -72.5
       ],
       [
-        -20.8125,
-        -53
+        -26.015625,
+        -66.25
       ],
       [
-        -37.0,
-        -36
+        -46.25,
+        -45.0
       ],
       [
-        -26.59375,
-        -16
+        -33.2421875,
+        -20.0
       ],
       [
-        -13.875,
-        10
+        -17.34375,
+        12.5
       ]
     ]
   },
@@ -270,12 +270,12 @@
     "retained": "Short supported input shafts with front/rear crank arms; left rear links staggered 6 mm for clearance. Actuator removed from body; both loops re-synthesized.",
     "servo_status": "Single-output continuous actuator reserved in stand. Standard limited-angle servo cannot run the current full-rotation input."
   },
-  "ground_mm": 28,
+  "ground_mm": 35,
   "body_requirement": {
-    "max_width_mm": 76,
-    "max_height_mm": 80,
-    "max_depth_mm": 80,
-    "wing_length_each_mm": 250,
+    "max_width_mm": 95,
+    "max_height_mm": 100,
+    "max_depth_mm": 100,
+    "wing_length_each_mm": 312.5,
     "actuator_location": "stationary pedestal, outside the bat body",
     "provenance": "Chosen visual/packaging requirements, not measurements of a bat."
   },
@@ -294,8 +294,8 @@
   "peak_fold_polish_min_deg": 65,
   "peak_fold_polish_max_deg": 73,
   "wing_lengths_mm": {
-    "inner": 100,
-    "outer": 150
+    "inner": 125,
+    "outer": 187.5
   },
   "motion_targets": {
     "shoulder_min_deg": -30,
@@ -323,7 +323,7 @@
     ],
     "provenance": "User prioritizes transmission >=40 degrees and small body over exact proposed angles. Shoulder downstroke may reduce to -18 degrees; actual achieved extrema and target errors are reported."
   },
-  "panel_root_relief_mm": 20,
-  "panel_hinge_relief_mm": 10,
+  "panel_root_relief_mm": 25.0,
+  "panel_hinge_relief_mm": 12.5,
   "minimum_transmission_deg": 40
 }

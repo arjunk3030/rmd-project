@@ -1,0 +1,7 @@
+{
+  "scope": "Sampled 6 mm shaft vs 18 mm blue-bar centerline envelopes only; no triangle, L, collars, supports, gears, motor or continuous-motion collision audit.",
+  "samples": 72,
+  "status": "NO CONFLICTS IN LIMITED SCREEN",
+  "conflicts": [],
+  "build_ready": false
+}

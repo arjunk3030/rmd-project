@@ -46,10 +46,18 @@ def build():
 
 The two blue crank arms lie at x = −16 and +16 mm. Their O hubs are rigidly locked to the same shaft; the 32 mm axial separation is a packaging feature, not two motors. The yellow inner-wing triangle is one printed body at x = −22 mm; its elbow pin reaches the outer wing at x = +18.5 mm. These are preliminary printed shapes, not final CAD.
 
-The assumed gray motor envelope is only 14 mm diameter and 5 mm long, placed between the rear crank arm and elbow coupler. No motor has been selected; a motor this short with adequate output torque has not been identified. A larger motor or different mount will require a new clearance check. Grounded supports and shaft locking are schematic.
+The assumed gray motor envelope is only 14 mm diameter and 5 mm long, placed between the rear crank arm and elbow coupler. No motor has been selected; a motor this short with adequate output torque has not been identified. A larger motor or different mount will require a new clearance check. Grounded supports and shaft locking are schematic. The 20 mm OD x 10 mm clamp hub used on the one-wing mock-up does not fit this concept's axial gaps (about 2.7 mm inboard to the support plate, 7-9 mm outboard to the rod planes), so it is not drawn here; adopting it needs respacing.
 
 The old same-face D/A–B pin collision is separated by 39.5 mm axially in this concept. Other checks are limited to the named envelopes in clearance.json. Printed bodies, bearing retention, support attachment, operating torque and full-cycle physical clearance are NOT validated. Moving D onto the front crank face makes its long pin pass through both fixed support plates. This is not a collision-free alternative as currently drawn.
 ''')
     dims={'Crank-arm planes':'−16 / +16 mm','Wing triangle plane':'−22 mm','Motor envelope (unselected)':'14 mm dia × 5 mm long','D pin / A–B axial gap':'39.5 mm'}
     write_viewer(frames,meta,dims,audit,OUTPUT_DIR/'split_direct_3d.html')
+    frame_cfg=dict(cfg,frame_wing=True)
+    frame_meta=dict(meta,name='One wing · rigid frame mock-up',mockup_settings=frame_cfg)
+    frame_dims=dict(dims,**{'Wing triangle plane':'−22 mm (rigid frame)'})
+    write_viewer(frames,frame_meta,frame_dims,audit,OUTPUT_DIR/'split_frame_3d.html')
+    strips_cfg=dict(cfg,separate_strips=True,plate_thickness_mm=3)
+    strips_meta=dict(meta,name='One wing · separate-strip concept',mockup_settings=strips_cfg)
+    strips_dims=dict(dims,**{'Strip thickness':'3 mm assumed','Shoulder strip planes':'−22 / −26 / −30 mm (illustrative)','Outer strip planes':'+18.5 / +22.5 mm (illustrative)'})
+    write_viewer(frames,strips_meta,strips_dims,audit,OUTPUT_DIR/'split_strips_3d.html')
     print('Wrote split-face concept; motor package and full printed-solid clearance remain unverified.')

@@ -1,0 +1,2 @@
+Please refer to the "Optimization: start here" section of the README of this repo to see all our code for synthesis: 
+https://github.com/arjunk3030/rmd-project

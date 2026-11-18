@@ -6,8 +6,8 @@
   ],
   "samples": 1440,
   "worst_input_deg": 283.5,
-  "planar_center_distance_mm": 0.002618261966346953,
-  "intersection_threshold_mm": 5.5,
-  "affected_samples": 271,
+  "planar_center_distance_mm": 0.0032728274579416506,
+  "intersection_threshold_mm": 12.0,
+  "affected_samples": 670,
   "scope": "A\u2013B middle section against D screw only; original axial stack places D through the A\u2013B layer. This does not check other parts, the actual fastener selection, or continuous-time clearance."
 }

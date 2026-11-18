@@ -7,28 +7,28 @@
   "results": [
     {
       "bridge_leg": "A",
-      "min_centerline_distance_mm": 0.013641676994759317,
-      "input_angle_deg": 103.5,
+      "min_centerline_distance_mm": 0.027197728800891104,
+      "input_angle_deg": 98.5,
       "combined_half_width_mm": 8.0,
       "intersects": true
     },
     {
       "bridge_leg": "B",
-      "min_centerline_distance_mm": 0.000535939646261159,
-      "input_angle_deg": 285.0,
+      "min_centerline_distance_mm": 0.0021385496405569525,
+      "input_angle_deg": 112.25,
       "combined_half_width_mm": 8.0,
       "intersects": true
     },
     {
       "front_section": "A",
-      "min_centerline_distance_mm": 0.7314672256296831,
+      "min_centerline_distance_mm": 3.28932980273561,
       "input_angle_deg": 283.5,
       "combined_half_width_mm": 5.5,
       "intersects": true
     },
     {
       "front_section": "B",
-      "min_centerline_distance_mm": 0.8422613868863312,
+      "min_centerline_distance_mm": 3.4278232090443663,
       "input_angle_deg": 283.5,
       "combined_half_width_mm": 5.5,
       "intersects": true

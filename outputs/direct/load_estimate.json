@@ -2,24 +2,24 @@
   "motor_count": 1,
   "input_rpm": 15.0,
   "cycle_seconds": 4.0,
-  "estimated_peak_constant_speed_torque_Nm": 0.06180595921965421,
+  "estimated_peak_constant_speed_torque_Nm": 0.07784833011410067,
   "friction_allowance_Nm": 0.05,
   "startup_ramp_seconds_assumed": 2,
-  "startup_torque_allowance_Nm": 0.0004376007380880079,
+  "startup_torque_allowance_Nm": 0.0006822874983596375,
   "assumed_path_efficiency": 0.95,
   "service_factor": 3.0,
-  "required_running_torque_target_Nm": 0.35445334723497546,
-  "peak_mechanical_power_W": 0.09708457371626801,
-  "elbow_rod_force_peak_N": 0.7015812661305079,
-  "factored_elbow_rod_force_N": 2.1047437983915236,
+  "required_running_torque_target_Nm": 0.40588616088145363,
+  "peak_mechanical_power_W": 0.12228387099034586,
+  "elbow_rod_force_peak_N": 0.7025437870059258,
+  "factored_elbow_rod_force_N": 2.1076313610177775,
   "elbow_axle_overhang_mm": 3,
-  "estimated_elbow_shaft_bending_MPa": 2.3820826983539383,
-  "estimated_elbow_shaft_deflection_mm": 2.3820826983539383e-05,
+  "estimated_elbow_shaft_bending_MPa": 2.3853507507305127,
+  "estimated_elbow_shaft_deflection_mm": 2.3853507507305122e-05,
   "assumed_steel_yield_MPa": 150,
   "assumed_steel_E_GPa": 200,
   "rod_material": "3 mm plywood; editable trial stock, not strength-qualified",
   "rod_E_GPa_assumed": 2.0,
-  "ideal_pinned_rod_buckling_N": 27.116734051450656,
+  "ideal_pinned_rod_buckling_N": 17.354709792928432,
   "conditional_strength_checks": {
     "elbow_shaft_bending": true,
     "elbow_shaft_deflection": true,
@@ -28,23 +28,23 @@
   "mass_assumptions": [
     {
       "part": "R/crank1",
-      "estimated_mass_g": 0.28235036696306226
+      "estimated_mass_g": 0.3284335360058274
     },
     {
       "part": "R/coupler1",
-      "estimated_mass_g": 0.41896772056001835
+      "estimated_mass_g": 0.4992052280020226
     },
     {
       "part": "R/rocker1",
-      "estimated_mass_g": 0.4845129656204361
+      "estimated_mass_g": 0.5811367843275448
     },
     {
       "part": "R/rod2_direct",
-      "estimated_mass_g": 1.8837116544691694
+      "estimated_mass_g": 2.3301351453884607
     },
     {
       "part": "R/elbow_horn",
-      "estimated_mass_g": 0.4267039318719152
+      "estimated_mass_g": 0.5088754921418934
     },
     {
       "part": "R/inner_spar",
@@ -56,23 +56,23 @@
     },
     {
       "part": "L/crank1",
-      "estimated_mass_g": 0.28235036696306226
+      "estimated_mass_g": 0.3284335360058274
     },
     {
       "part": "L/coupler1",
-      "estimated_mass_g": 0.41896772056001835
+      "estimated_mass_g": 0.4992052280020226
     },
     {
       "part": "L/rocker1",
-      "estimated_mass_g": 0.4845129656204361
+      "estimated_mass_g": 0.5811367843275448
     },
     {
       "part": "L/rod2_direct",
-      "estimated_mass_g": 1.8837116544691694
+      "estimated_mass_g": 2.3301351453884607
     },
     {
       "part": "L/elbow_horn",
-      "estimated_mass_g": 0.4267039318719152
+      "estimated_mass_g": 0.5088754921418934
     },
     {
       "part": "L/inner_spar",

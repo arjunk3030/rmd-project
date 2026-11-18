@@ -144,8 +144,9 @@ class SynthesisTests(unittest.TestCase):
             self.assertNotIn(side+'/control_lever2',geom['parts'])
         self.assertGreaterEqual(sim['mu1'].min(),40)
         self.assertGreaterEqual(sim['mu2'].min(),40)
-        np.testing.assert_allclose(np.linalg.norm(sim['E'],axis=1),100,atol=1e-8)
-        np.testing.assert_allclose(np.linalg.norm(sim['TIP']-sim['E'],axis=1),150,atol=1e-8)
+        wl=settings()['wing_lengths_mm']
+        np.testing.assert_allclose(np.linalg.norm(sim['E'],axis=1),wl['inner'],atol=1e-8)
+        np.testing.assert_allclose(np.linalg.norm(sim['TIP']-sim['E'],axis=1),wl['outer'],atol=1e-8)
         self.assertEqual(len(gears(0,settings())),2)
         with patch('rmd.designs.direct_digest',return_value=('changed',{})):
             with self.assertRaisesRegex(ValueError,'Saved direct fit does not match'):get_direct(allow_fit=False)
@@ -162,9 +163,9 @@ class SynthesisTests(unittest.TestCase):
                 self.assertGreaterEqual(r['kinematics']['mu2_min_deg'],40)
                 if kind=='direct':
                     body=r['hardware']['body_envelope']
-                    self.assertLessEqual(body['width_mm'],76)
-                    self.assertLessEqual(body['height_mm'],80)
-                    self.assertLessEqual(body['depth_mm'],80)
+                    self.assertLessEqual(body['width_mm'],95)
+                    self.assertLessEqual(body['height_mm'],100)
+                    self.assertLessEqual(body['depth_mm'],100)
                     self.assertEqual(r['clearance']['belt_count'],1)
 
     def test_body_cover_is_audited_not_only_cosmetic(self):

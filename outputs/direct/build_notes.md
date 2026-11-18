@@ -1,11 +1,11 @@
 # Small-body plywood bat — numerical prototype
 
-Nominal checks: **PASS**. Hardware and loaded operation are unverified.
+Nominal checks: **FAIL**. Hardware and loaded operation are unverified.
 
 ## Small body is a design requirement
 
-The shoulder pivots are 50 mm apart; O–S ground is
-28 mm. The front bat face is 74 x 80 x 3 mm.
+The shoulder pivots are 54 mm apart; O–S ground is
+35 mm. The front bat face is 92.5 x 100 x 3 mm.
 Inner/outer wing lengths are 100/150 mm. Body bearings are small 3 mm-shaft plain
 bushings, not the former 16 mm ball bearings and 24 mm housings. Shaft hubs are
 8 mm OD trial envelopes, the elbow sleeve carrier is 9 mm OD.
@@ -36,8 +36,8 @@ material assumptions remain editable in config/direct_drive.json.
 Actual shoulder: -21.54..36.12 degrees.
 Actual fold: 14.00..65.00 degrees.
 Minimum transmission A/elbow: 40.50/40.50 degrees.
-Modeled conflicts: 0 across 1440 poses.
-Running-torque estimate: 0.354 Nm;
+Modeled conflicts: 21 across 1440 poses.
+Running-torque estimate: 0.406 Nm;
 this uses guessed masses, stiffness and friction, not verified actuator capacity.
 
 ## Build references

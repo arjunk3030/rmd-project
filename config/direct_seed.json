@@ -1,17 +1,17 @@
 {
   "parameters": [
-    11.816197190452613,
-    20.57371985692415,
-    24.77533813002786,
+    14.770246488065766,
+    25.71714982115519,
+    30.969172662534824,
     -1.1742272158332396,
     0.20910086852814305,
-    12.341103362423812,
+    15.426379203029764,
     1.082778310318743,
-    21.069630838455993,
+    26.33703854806999,
     2.349847416417362,
-    114.46756177417743
+    143.08445221772178
   ],
   "branchA": 1,
   "branchE": -1,
-  "provenance": "Dense 1440-pose small-body synthesis with >=40 degree transmission priority."
+  "provenance": "Dense 1440-pose small-body synthesis with >=40 degree transmission priority. Scaled x1.25 with the design on 2026-11-17."
 }

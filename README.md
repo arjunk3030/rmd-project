@@ -15,9 +15,8 @@ open outputs/index.html
 | 2D linkage with target overlay | `direct_2d.html` |
 | Bat appearance | `bat_3d.html` |
 
-The split-face 3D view has a toggle for approximate scale references: a 150 × 72 × 8 mm phone and a stylized hand approximately 180 mm long.
 
-The same-face package has a known collision. The chosen package passes nominal checks for **3 mm stock**; 6.35 mm plywood and actual actuator sizing remain unverified.
+The previous two-wing package fails its nominal clearance check. The newer two-wing mockup is a visualization concept; its drive and physical clearances remain unverified.
 
 ## Setup and generate
 
@@ -118,7 +117,13 @@ The mock-up now shows one directly driven wing: yellow wing spars, blue printed 
 The offset-link trial is `outputs/offset_experiment_3d.html`; regenerate it with `python3 run_all.py mockup-offset`. The trial fails its limited clearance check: the bridge intersects the elbow coupler and D screw. Results are in `outputs/offset_experiment/clearance.json`.
 
 
-One-wing split-face direct-drive concept: `open outputs/split_direct_3d.html`; regenerate using `python3 run_all.py split-direct`. The visual uses a 14 × 5 mm motor envelope only to show one possible packaging volume; no motor has been selected or qualified. See `outputs/split_direct/clearance.json` for the limited checks and unresolved issues.
+Two-wing split-face mockup: `open outputs/working_mockup_3d.html`; regenerate using `python3 run_all.py working-mockup`. It depicts 6 mm shafts, collars, crank hubs and a conceptual wall-mounted motor and gear train. The drive and physical clearances are not verified; see `outputs/working_mockup/build_notes.md`.
+
+The generated spacer planning table is `outputs/working_mockup/spacers.md`. Change `wall_inner_gap_mm` in `config/presentation/mockup.json`, then rerun `python3 run_all.py working-mockup` to update wall-dependent gaps and the view. The table gives face gaps, not verified spacer cutting lengths.
+
+The alternative rigid-frame mockup is `open outputs/split_frame_3d.html`. The same command regenerates both versions using the saved motion. Its yellow frame is one rigid body, not three independently pivoting links; its strength, hardware and clearances remain unverified.
+
+For five separate strips, open `outputs/split_strips_3d.html`. The shoulder's three strips must form one rigid body, and the outer wing's two strips another. Their layer offsets are illustrative: rigid connectors, bearings, collisions and strength are not yet designed or validated. `split-direct` regenerates this view too.
 
 
 The full two-wing split-face and same-face views show a top-mounted motor driving the right wing gear through an 18-tooth pinion. The two 34-tooth wing gears remain, so the external motor-to-wing ratio is 34:18 ≈ 1.89:1. `python3 run_all.py top-drive` regenerates those two views and the limited checks. The motor envelope, long shaft, bracket, printed gear strength and fits are not validated; the same-face linkage collision remains. The separate one-wing mock-up remains gearless.

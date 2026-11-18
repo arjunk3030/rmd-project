@@ -13,11 +13,6 @@ for(const kind of ['direct','single_face','bat']){
  if(draws<30)throw Error('No drawing');
  if(labels!==0)throw Error('Image text should be off by default');
  if(kind==='direct')vm.runInNewContext("if(META.covers.length!==6)throw Error('Missing bat cover'); if(META.boxes.some(b=>b.name==='R/motor'))throw Error('Large body motor remains'); if(DATA[0].parts.some(p=>p.name==='body_pulley')||!DATA[0].parts.some(p=>p.name==='top_motor_shaft'))throw Error('Top motor layout incorrect')",sandbox);
- if(kind==='direct'){
-  vm.runInNewContext("if(!META.scale_reference)throw Error('Scale reference missing');",sandbox);
-  element('scale').checked=false;let before=draws;element('scale').onchange();let without=draws-before;
-  element('scale').checked=true;before=draws;element('scale').onchange();if(draws-before<=without)throw Error('Scale references did not draw');
- }
  if(kind==='bat')vm.runInNewContext("if(!BAT||META.costume.length<20)throw Error('Missing costume');if(elById('structure').checked)throw Error('Drive should start hidden');",sandbox);
  element('labels').checked=true;element('labels').onchange();if(!labels)throw Error('Label toggle failed');element('labels').checked=false;element('labels').onchange();
  element('cover').checked=false;element('cover').onchange();element('cover').checked=true;element('cover').onchange();

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" role="img" aria-labelledby="title desc">
+<title id="title">Concept for a rigid strip connection with a pivot bearing</title>
+<desc id="desc">Two strips are joined at a fixed angle with a plate and four screws. A bearing at the central hole allows that whole assembly to pivot relative to another part.</desc>
+<rect width="1100" height="650" fill="#f7f8fa"/>
+<g font-family="Arial,sans-serif" fill="#1c2938">
+<text x="45" y="52" font-size="29" font-weight="bold">Rigid strips, moving pivot</text>
+<text x="45" y="82" font-size="16">Illustrative connection concept — not to scale or ready to fabricate</text>
+<text x="45" y="130" font-size="20" font-weight="bold">Face view: one rigid assembly</text>
+<text x="660" y="130" font-size="20" font-weight="bold">At the elbow E</text>
+</g>
+<!-- Two strips and a gusset: screws are spaced away from the central bearing. -->
+<path d="M98 426 L336 300 L361 348 L123 474 Z" fill="#f0a92c" stroke="#9b6b12" stroke-width="3"/>
+<path d="M333 302 L489 165 L525 207 L363 349 Z" fill="#f4c53f" stroke="#9b6b12" stroke-width="3"/>
+<path d="M221 367 L331 308 L407 241 L444 281 L365 349 L245 411 Z" fill="#ffd965" stroke="#a57f24" stroke-width="3" opacity=".94"/>
+<g fill="#6c7c8b" stroke="#344453" stroke-width="3">
+<circle cx="250" cy="381" r="9"/><circle cx="282" cy="364" r="9"/><circle cx="392" cy="280" r="9"/><circle cx="415" cy="260" r="9"/>
+</g>
+<g stroke="#ecf1f5" stroke-width="2"><path d="M244 381h12m-6-6v12M276 364h12m-6-6v12M386 280h12m-6-6v12M409 260h12m-6-6v12"/></g>
+<circle cx="345" cy="326" r="24" fill="#9dadbb" stroke="#344453" stroke-width="3"/><circle cx="345" cy="326" r="12" fill="#f7f8fa" stroke="#344453" stroke-width="3"/>
+<g font-family="Arial,sans-serif" fill="#1c2938" font-size="16">
+<path d="M347 351 L362 438 L508 438" fill="none" stroke="#374b5e" stroke-width="2"/><text x="370" y="461">Main pivot bearing</text>
+<path d="M279 359 L231 272 L70 272" fill="none" stroke="#374b5e" stroke-width="2"/><text x="70" y="261">Small screws clamp plate</text><text x="70" y="281">to both strips</text>
+<path d="M415 310 L465 348 L561 348" fill="none" stroke="#374b5e" stroke-width="2"/><text x="469" y="370">Rigid plate</text>
+<text x="52" y="547" font-weight="bold">The plate and screws stop the two strips</text><text x="52" y="570" font-weight="bold">from rotating relative to each other.</text>
+</g>
+<g font-family="Arial,sans-serif" font-size="17" fill="#1c2938">
+<rect x="660" y="164" width="385" height="79" rx="8" fill="#fff0b4" stroke="#b99025" stroke-width="2"/>
+<text x="680" y="196" font-weight="bold">Shoulder strips: fixed to each other</text><text x="680" y="223">One rigid shoulder assembly</text>
+<path d="M852 244v38" stroke="#53677a" stroke-width="3"/>
+<circle cx="852" cy="313" r="30" fill="#aebdcc" stroke="#53677a" stroke-width="3"/><circle cx="852" cy="313" r="13" fill="#f7f8fa" stroke="#53677a" stroke-width="3"/>
+<text x="892" y="309">E pivot: bearing</text><text x="892" y="331">allows rotation</text>
+<path d="M852 344v38" stroke="#53677a" stroke-width="3"/>
+<rect x="660" y="382" width="385" height="79" rx="8" fill="#ffe0ab" stroke="#b57924" stroke-width="2"/>
+<text x="680" y="414" font-weight="bold">Outer strips: fixed to each other</text><text x="680" y="441">One rigid outer-wing assembly</text>
+<text x="660" y="510">The blue elbow coupler moves the outer</text><text x="660" y="534">assembly and resists its weight.</text>
+<text x="660" y="586" font-size="14">Bearing seating, fasteners, clearances and loads</text><text x="660" y="605" font-size="14">must be designed for the selected parts.</text>
+</g></svg>

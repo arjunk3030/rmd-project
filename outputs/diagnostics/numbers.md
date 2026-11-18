@@ -4,12 +4,12 @@ These are recomputed from the frozen parameter vector, not copied PASS flags.
 
 | Link parameter | Saved value |
 | --- | ---: |
-| a | 11.816197 mm |
-| b | 20.573720 mm |
-| c | 24.775338 mm |
-| aD | 12.341103 mm |
-| h | 21.069631 mm |
-| L | 114.467562 mm |
+| a | 14.770246 mm |
+| b | 25.717150 mm |
+| c | 30.969173 mm |
+| aD | 15.426379 mm |
+| h | 26.337039 mm |
+| L | 143.084452 mm |
 
 Canonical values and branches: `outputs/direct/dimensions.json`. Freeze guard: `config/presentation/frozen_design.json`.
 

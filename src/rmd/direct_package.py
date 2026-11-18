@@ -52,11 +52,11 @@ def geometry(sim,cfg):
             if name.startswith(side+'/'):placed[name]=[compact.transform(p,side,cfg)+[xw,0,0] for p in quad]
     for x in (-9.5,9.5):
         holes=[[x,m*half,0] for m in (-1,1)]+[[x,m*(half+O[0]),O[1]] for m in (-1,1)]
-        plates.append({'name':f'common_bearing_plate_{x:g}','center':[x,0,-14],'size':[3,cfg['shoulder_spacing_mm']+12,44],
+        plates.append({'name':f'common_bearing_plate_{x:g}','center':[x,0,-16],'size':[3,cfg['shoulder_spacing_mm']+12,52],
                        'holes':holes,'hole_radius':3.05})
     # Fixed posts are below the crank sweep and reach the common plates' lower edges.
     for x in (-9.5,9.5):
-        boxes.append({'name':f'stand_leg_{x:g}','center':[x,-16,-94],'size':[3,6,116]})
+        boxes.append({'name':f'stand_leg_{x:g}','center':[x,-16,-98.5],'size':[3,6,113]})
     for y in (-17,0):
         for z in (5,):
             part(f'frame_spacer_{y}_{z}',np.tile([-8,y,z],(n,1)),np.tile([8,y,z],(n,1)),1.5,{'frame'})

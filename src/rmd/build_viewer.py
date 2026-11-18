@@ -14,14 +14,16 @@ def write_viewer(frames,meta,dimensions,audit,path,*,generate_related=True):
     if path.name in ('direct_3d.html','single_face_3d.html'):
         from .top_drive import apply
         frames,meta,dimensions=apply(frames,meta,dimensions)
-    if path.name=='direct_3d.html':meta['scale_reference']=True
     if meta.get('design_id')=='direct' and not meta.get('bat_preview'):
         meta['other_viewer']='direct_3d.html' if meta.get('integrated_crank') else 'single_face_3d.html'
     html=HTML.replace("/* MOCKUP_GEOMETRY */", (Path(__file__).parent/"templates/mockup_geometry.js").read_text() if meta.get("mockup") else "")
-    html=html.replace('/* SCALE_GEOMETRY */', (Path(__file__).parent/'templates/scale_reference.js').read_text() if meta.get('scale_reference') else '')
     if meta.get('mockup'):
         start=html.index('<h2>How to read it</h2>');end=html.index('<h2>Dimensions / limits</h2>',start)
-        html=html[:start]+'<h2>Legend</h2><div style="color:#ffe23b">Yellow · inner-wing triangle &amp; outer spar</div><div style="color:#438bff">Blue · printed linkage</div><div style="color:#ff4f58">'+('Red · bridge intersects blue elbow coupler and D screw' if meta.get('mockup_bridge') else 'Red · A–B coupler (intersects gray D screw)')+'</div>'+html[end:]
+        settings=meta.get('mockup_settings',{})
+        wing='separate strips · rigid connections required' if settings.get('separate_strips') else 'rigid inner-wing frame &amp; outer spar' if settings.get('frame_wing') else 'inner-wing triangle &amp; outer spar'
+        note=('<div>Concept only: rigid connectors, bearings and strip clearances are not designed or validated. Strip offsets are illustrative.</div>' if settings.get('separate_strips') else '<div>Frame members are rigidly connected; they are not separate pivots. Clearance and strength are unverified.</div>' if settings.get('frame_wing') else '')
+        collision='' if meta.get('split_mockup') else '<div style="color:#ff4f58">'+('Red · bridge intersects blue elbow coupler and D screw' if meta.get('mockup_bridge') else 'Red · A–B coupler (intersects gray D screw)')+'</div>'
+        html=html[:start]+'<h2>Legend</h2><div style="color:#ffe23b">Yellow · '+wing+'</div><div style="color:#438bff">Blue · printed linkage</div>'+collision+note+html[end:]
 
     for key,value in [('DATA',frames),('META',meta),('DIMS',dimensions),('AUDIT',audit)]:
         html=html.replace('__'+key+'__',json.dumps(value,allow_nan=False))
